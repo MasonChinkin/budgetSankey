@@ -1,0 +1,46 @@
+.line {
+  fill: none;
+  stroke-width: 3px;
+  opacity: .3;
+}
+
+.thisYearLine line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1;
+  opacity: 0.5;
+}
+
+.revAxis,
+.spendAxis {
+  font-size: 12px;
+  font-weight: bold;
+
+  & .domain {
+    opacity: 0;
+  }
+}
+
+.thisYearLine.rev text {
+  font-size: 14px;
+  text-anchor: middle;
+  font-weight: bold;
+  opacity: 0;
+}
+
+.lineNode path {
+  opacity: 0.2;
+}
+
+.lineTitle {
+  font-size: 20px;
+  font-weight: bold;
+  text-anchor: middle;
+}
+
+.lineLabel {
+  text-anchor: middle;
+  font-size: 14px;
+  fill: black;
+  font-weight: bold;
+}

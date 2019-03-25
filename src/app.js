@@ -1,5 +1,10 @@
 import './app.scss';
+import {
+  drawDasboard
+} from './js/main';
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('hello')
+  drawDasboard()
+
+  document.addEventListener('resize', drawDasboard)
 })

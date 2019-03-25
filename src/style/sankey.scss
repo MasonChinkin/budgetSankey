@@ -1,0 +1,38 @@
+.node rect {
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+
+.node text {
+  pointer-events: none;
+  text-shadow: 0px 0px 2px #fff;
+  font-weight: 1000;
+}
+
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .4;
+}
+
+.nodeRect {
+  fill: lightgray;
+  opacity: 0.5;
+  stroke: black;
+}
+
+.nodePercent {
+  text-anchor: middle;
+  font-size: 16px;
+}
+
+.percent {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.deficitLabel {
+  text-anchor: middle;
+  font-size: 28px;
+  font-weight: bold;
+}

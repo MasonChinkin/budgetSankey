@@ -1,9 +1,10 @@
-#visualization {
+#visualization-container {
   background: white;
   width: 90vw;
-  height: 67vh;
+  height: auto;
+  margin: 10px 0 50px 0;
 }
 
-// .visualization-container {
-//   position: relative;
-// }
+p {
+  fill: black;
+}

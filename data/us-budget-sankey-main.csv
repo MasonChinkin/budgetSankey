@@ -1,0 +1,1051 @@
+source,target,year,value,dollars,type
+Corporate Tax,Revenue,1968,3.2,28.665,Revenue
+Corporate Tax,Revenue,1969,3.7,36.678,Revenue
+Corporate Tax,Revenue,1970,3.1,32.829,Revenue
+Corporate Tax,Revenue,1971,2.4,26.785,Revenue
+Corporate Tax,Revenue,1972,2.6,32.166,Revenue
+Corporate Tax,Revenue,1973,2.7,36.153,Revenue
+Corporate Tax,Revenue,1974,2.6,38.62,Revenue
+Corporate Tax,Revenue,1975,2.5,40.621,Revenue
+Corporate Tax,Revenue,1976,2.3,41.409,Revenue
+Corporate Tax,Revenue,1977,2.7,54.892,Revenue
+Corporate Tax,Revenue,1978,2.6,59.952,Revenue
+Corporate Tax,Revenue,1979,2.6,65.677,Revenue
+Corporate Tax,Revenue,1980,2.3,64.6,Revenue
+Corporate Tax,Revenue,1981,1.9,61.137,Revenue
+Corporate Tax,Revenue,1982,1.5,49.207,Revenue
+Corporate Tax,Revenue,1983,1,37.022,Revenue
+Corporate Tax,Revenue,1984,1.4,56.893,Revenue
+Corporate Tax,Revenue,1985,1.4,61.331,Revenue
+Corporate Tax,Revenue,1986,1.4,63.143,Revenue
+Corporate Tax,Revenue,1987,1.8,83.926,Revenue
+Corporate Tax,Revenue,1988,1.8,94.508,Revenue
+Corporate Tax,Revenue,1989,1.9,103.291,Revenue
+Corporate Tax,Revenue,1990,1.6,93.507,Revenue
+Corporate Tax,Revenue,1991,1.6,98.086,Revenue
+Corporate Tax,Revenue,1992,1.6,100.27,Revenue
+Corporate Tax,Revenue,1993,1.7,117.52,Revenue
+Corporate Tax,Revenue,1994,2,140.385,Revenue
+Corporate Tax,Revenue,1995,2.1,157.004,Revenue
+Corporate Tax,Revenue,1996,2.2,171.824,Revenue
+Corporate Tax,Revenue,1997,2.1,182.293,Revenue
+Corporate Tax,Revenue,1998,2.1,188.677,Revenue
+Corporate Tax,Revenue,1999,1.9,184.68,Revenue
+Corporate Tax,Revenue,2000,2,207.289,Revenue
+Corporate Tax,Revenue,2001,1.4,151.075,Revenue
+Corporate Tax,Revenue,2002,1.4,148.044,Revenue
+Corporate Tax,Revenue,2003,1.2,131.778,Revenue
+Corporate Tax,Revenue,2004,1.6,189.371,Revenue
+Corporate Tax,Revenue,2005,2.2,278.282,Revenue
+Corporate Tax,Revenue,2006,2.6,353.915,Revenue
+Corporate Tax,Revenue,2007,2.6,370.243,Revenue
+Corporate Tax,Revenue,2008,2.1,304.346,Revenue
+Corporate Tax,Revenue,2009,1,138.229,Revenue
+Corporate Tax,Revenue,2010,1.3,191.437,Revenue
+Corporate Tax,Revenue,2011,1.2,181.085,Revenue
+Corporate Tax,Revenue,2012,1.5,242.289,Revenue
+Corporate Tax,Revenue,2013,1.7,273.506,Revenue
+Corporate Tax,Revenue,2014,1.9,320.731,Revenue
+Corporate Tax,Revenue,2015,1.9,343.797,Revenue
+Corporate Tax,Revenue,2016,1.6,299.571,Revenue
+Corporate Tax,Revenue,2017,1.5,297.048,Revenue
+Customs Duties,Revenue,1968,0.2,2.038,Revenue
+Customs Duties,Revenue,1969,0.2,2.319,Revenue
+Customs Duties,Revenue,1970,0.2,2.43,Revenue
+Customs Duties,Revenue,1971,0.2,2.591,Revenue
+Customs Duties,Revenue,1972,0.3,3.287,Revenue
+Customs Duties,Revenue,1973,0.2,3.188,Revenue
+Customs Duties,Revenue,1974,0.2,3.334,Revenue
+Customs Duties,Revenue,1975,0.2,3.676,Revenue
+Customs Duties,Revenue,1976,0.2,4.074,Revenue
+Customs Duties,Revenue,1977,0.3,5.15,Revenue
+Customs Duties,Revenue,1978,0.3,6.573,Revenue
+Customs Duties,Revenue,1979,0.3,7.439,Revenue
+Customs Duties,Revenue,1980,0.3,7.174,Revenue
+Customs Duties,Revenue,1981,0.3,8.083,Revenue
+Customs Duties,Revenue,1982,0.3,8.854,Revenue
+Customs Duties,Revenue,1983,0.2,8.655,Revenue
+Customs Duties,Revenue,1984,0.3,11.37,Revenue
+Customs Duties,Revenue,1985,0.3,12.079,Revenue
+Customs Duties,Revenue,1986,0.3,13.327,Revenue
+Customs Duties,Revenue,1987,0.3,15.085,Revenue
+Customs Duties,Revenue,1988,0.3,16.198,Revenue
+Customs Duties,Revenue,1989,0.3,16.334,Revenue
+Customs Duties,Revenue,1990,0.3,16.707,Revenue
+Customs Duties,Revenue,1991,0.3,15.949,Revenue
+Customs Duties,Revenue,1992,0.3,17.359,Revenue
+Customs Duties,Revenue,1993,0.3,18.802,Revenue
+Customs Duties,Revenue,1994,0.3,20.099,Revenue
+Customs Duties,Revenue,1995,0.3,19.301,Revenue
+Customs Duties,Revenue,1996,0.2,18.67,Revenue
+Customs Duties,Revenue,1997,0.2,17.928,Revenue
+Customs Duties,Revenue,1998,0.2,18.297,Revenue
+Customs Duties,Revenue,1999,0.2,18.336,Revenue
+Customs Duties,Revenue,2000,0.2,19.914,Revenue
+Customs Duties,Revenue,2001,0.2,19.369,Revenue
+Customs Duties,Revenue,2002,0.2,18.602,Revenue
+Customs Duties,Revenue,2003,0.2,19.862,Revenue
+Customs Duties,Revenue,2004,0.2,21.083,Revenue
+Customs Duties,Revenue,2005,0.2,23.379,Revenue
+Customs Duties,Revenue,2006,0.2,24.81,Revenue
+Customs Duties,Revenue,2007,0.2,26.01,Revenue
+Customs Duties,Revenue,2008,0.2,27.568,Revenue
+Customs Duties,Revenue,2009,0.2,22.453,Revenue
+Customs Duties,Revenue,2010,0.2,25.298,Revenue
+Customs Duties,Revenue,2011,0.2,29.519,Revenue
+Customs Duties,Revenue,2012,0.2,30.307,Revenue
+Customs Duties,Revenue,2013,0.2,31.815,Revenue
+Customs Duties,Revenue,2014,0.2,33.926,Revenue
+Customs Duties,Revenue,2015,0.2,35.041,Revenue
+Customs Duties,Revenue,2016,0.2,34.838,Revenue
+Customs Duties,Revenue,2017,0.2,34.574,Revenue
+Discretionary,Defense,1968,9.1,82.152,Spending
+Discretionary,Defense,1969,8.4,82.715,Spending
+Discretionary,Defense,1970,7.8,81.912,Spending
+Discretionary,Defense,1971,7.1,79.009,Spending
+Discretionary,Defense,1972,6.5,79.338,Spending
+Discretionary,Defense,1973,5.7,77.095,Spending
+Discretionary,Defense,1974,5.4,80.72,Spending
+Discretionary,Defense,1975,5.4,87.615,Spending
+Discretionary,Defense,1976,5,89.876,Spending
+Discretionary,Defense,1977,4.8,97.517,Spending
+Discretionary,Defense,1978,4.6,104.649,Spending
+Discretionary,Defense,1979,4.5,116.777,Spending
+Discretionary,Defense,1980,4.8,134.629,Spending
+Discretionary,Defense,1981,5,157.964,Spending
+Discretionary,Defense,1982,5.6,185.933,Spending
+Discretionary,Defense,1983,5.9,209.882,Spending
+Discretionary,Defense,1984,5.8,228.045,Spending
+Discretionary,Defense,1985,5.9,253.109,Spending
+Discretionary,Defense,1986,6,273.832,Spending
+Discretionary,Defense,1987,5.9,282.517,Spending
+Discretionary,Defense,1988,5.6,290.918,Spending
+Discretionary,Defense,1989,5.5,304.034,Spending
+Discretionary,Defense,1990,5.1,300.141,Spending
+Discretionary,Defense,1991,5.2,319.704,Spending
+Discretionary,Defense,1992,4.7,302.602,Spending
+Discretionary,Defense,1993,4.3,292.43,Spending
+Discretionary,Defense,1994,3.9,282.266,Spending
+Discretionary,Defense,1995,3.6,273.562,Spending
+Discretionary,Defense,1996,3.3,265.961,Spending
+Discretionary,Defense,1997,3.2,271.674,Spending
+Discretionary,Defense,1998,3,270.25,Spending
+Discretionary,Defense,1999,2.9,275.463,Spending
+Discretionary,Defense,2000,2.9,294.965,Spending
+Discretionary,Defense,2001,2.9,306.075,Spending
+Discretionary,Defense,2002,3.2,348.952,Spending
+Discretionary,Defense,2003,3.6,404.942,Spending
+Discretionary,Defense,2004,3.8,454.057,Spending
+Discretionary,Defense,2005,3.8,493.603,Spending
+Discretionary,Defense,2006,3.8,519.967,Spending
+Discretionary,Defense,2007,3.8,547.868,Spending
+Discretionary,Defense,2008,4.2,612.434,Spending
+Discretionary,Defense,2009,4.6,656.724,Spending
+Discretionary,Defense,2010,4.7,688.854,Spending
+Discretionary,Defense,2011,4.5,699.392,Spending
+Discretionary,Defense,2012,4.2,670.523,Spending
+Discretionary,Defense,2013,3.8,625.75,Spending
+Discretionary,Defense,2014,3.5,596.449,Spending
+Discretionary,Defense,2015,3.2,583.367,Spending
+Discretionary,Defense,2016,3.2,584.831,Spending
+Discretionary,Defense,2017,3.1,590.192,Spending
+Discretionary,Nondefense,1968,4,35.826,Spending
+Discretionary,Nondefense,1969,3.5,34.603,Spending
+Discretionary,Nondefense,1970,3.7,38.342,Spending
+Discretionary,Nondefense,1971,3.9,43.522,Spending
+Discretionary,Nondefense,1972,4,49.206,Spending
+Discretionary,Nondefense,1973,3.9,53.299,Spending
+Discretionary,Nondefense,1974,3.9,57.487,Spending
+Discretionary,Nondefense,1975,4.4,70.35,Spending
+Discretionary,Nondefense,1976,4.8,85.701,Spending
+Discretionary,Nondefense,1977,4.9,99.556,Spending
+Discretionary,Nondefense,1978,5,114.061,Spending
+Discretionary,Nondefense,1979,4.8,123.221,Spending
+Discretionary,Nondefense,1980,5.1,141.695,Spending
+Discretionary,Nondefense,1981,4.8,149.949,Spending
+Discretionary,Nondefense,1982,4.2,140.019,Spending
+Discretionary,Nondefense,1983,4.1,143.428,Spending
+Discretionary,Nondefense,1984,3.8,151.402,Spending
+Discretionary,Nondefense,1985,3.8,162.684,Spending
+Discretionary,Nondefense,1986,3.6,164.688,Spending
+Discretionary,Nondefense,1987,3.4,161.644,Spending
+Discretionary,Nondefense,1988,3.4,173.5,Spending
+Discretionary,Nondefense,1989,3.3,184.798,Spending
+Discretionary,Nondefense,1990,3.4,200.437,Spending
+Discretionary,Nondefense,1991,3.5,213.574,Spending
+Discretionary,Nondefense,1992,3.6,231.201,Spending
+Discretionary,Nondefense,1993,3.6,247.323,Spending
+Discretionary,Nondefense,1994,3.6,259.074,Spending
+Discretionary,Nondefense,1995,3.6,271.199,Spending
+Discretionary,Nondefense,1996,3.3,266.772,Spending
+Discretionary,Nondefense,1997,3.2,275.363,Spending
+Discretionary,Nondefense,1998,3.1,281.745,Spending
+Discretionary,Nondefense,1999,3.1,296.65,Spending
+Discretionary,Nondefense,2000,3.1,319.661,Spending
+Discretionary,Nondefense,2001,3.2,342.966,Spending
+Discretionary,Nondefense,2002,3.5,384.998,Spending
+Discretionary,Nondefense,2003,3.7,419.397,Spending
+Discretionary,Nondefense,2004,3.6,441.008,Spending
+Discretionary,Nondefense,2005,3.7,474.938,Spending
+Discretionary,Nondefense,2006,3.6,496.657,Spending
+Discretionary,Nondefense,2007,3.4,493.722,Spending
+Discretionary,Nondefense,2008,3.5,522.45,Spending
+Discretionary,Nondefense,2009,4,580.812,Spending
+Discretionary,Nondefense,2010,4.4,658.312,Spending
+Discretionary,Nondefense,2011,4.2,647.745,Spending
+Discretionary,Nondefense,2012,3.8,615.564,Spending
+Discretionary,Nondefense,2013,3.5,576.378,Spending
+Discretionary,Nondefense,2014,3.4,582.225,Spending
+Discretionary,Nondefense,2015,3.3,585.289,Spending
+Discretionary,Nondefense,2016,3.3,600.418,Spending
+Discretionary,Nondefense,2017,3.2,609.967,Spending
+Estate/Gift Tax,Revenue,1968,0.3,3.051,Revenue
+Estate/Gift Tax,Revenue,1969,0.4,3.491,Revenue
+Estate/Gift Tax,Revenue,1970,0.3,3.644,Revenue
+Estate/Gift Tax,Revenue,1971,0.3,3.735,Revenue
+Estate/Gift Tax,Revenue,1972,0.4,5.436,Revenue
+Estate/Gift Tax,Revenue,1973,0.4,4.917,Revenue
+Estate/Gift Tax,Revenue,1974,0.3,5.035,Revenue
+Estate/Gift Tax,Revenue,1975,0.3,4.611,Revenue
+Estate/Gift Tax,Revenue,1976,0.3,5.216,Revenue
+Estate/Gift Tax,Revenue,1977,0.4,7.327,Revenue
+Estate/Gift Tax,Revenue,1978,0.2,5.285,Revenue
+Estate/Gift Tax,Revenue,1979,0.2,5.411,Revenue
+Estate/Gift Tax,Revenue,1980,0.2,6.389,Revenue
+Estate/Gift Tax,Revenue,1981,0.2,6.787,Revenue
+Estate/Gift Tax,Revenue,1982,0.2,7.991,Revenue
+Estate/Gift Tax,Revenue,1983,0.2,6.053,Revenue
+Estate/Gift Tax,Revenue,1984,0.2,6.01,Revenue
+Estate/Gift Tax,Revenue,1985,0.2,6.422,Revenue
+Estate/Gift Tax,Revenue,1986,0.2,6.958,Revenue
+Estate/Gift Tax,Revenue,1987,0.2,7.493,Revenue
+Estate/Gift Tax,Revenue,1988,0.1,7.594,Revenue
+Estate/Gift Tax,Revenue,1989,0.2,8.745,Revenue
+Estate/Gift Tax,Revenue,1990,0.2,11.5,Revenue
+Estate/Gift Tax,Revenue,1991,0.2,11.138,Revenue
+Estate/Gift Tax,Revenue,1992,0.2,11.143,Revenue
+Estate/Gift Tax,Revenue,1993,0.2,12.577,Revenue
+Estate/Gift Tax,Revenue,1994,0.2,15.225,Revenue
+Estate/Gift Tax,Revenue,1995,0.2,14.763,Revenue
+Estate/Gift Tax,Revenue,1996,0.2,17.189,Revenue
+Estate/Gift Tax,Revenue,1997,0.2,19.845,Revenue
+Estate/Gift Tax,Revenue,1998,0.3,24.076,Revenue
+Estate/Gift Tax,Revenue,1999,0.3,27.782,Revenue
+Estate/Gift Tax,Revenue,2000,0.3,29.01,Revenue
+Estate/Gift Tax,Revenue,2001,0.3,28.4,Revenue
+Estate/Gift Tax,Revenue,2002,0.2,26.507,Revenue
+Estate/Gift Tax,Revenue,2003,0.2,21.959,Revenue
+Estate/Gift Tax,Revenue,2004,0.2,24.831,Revenue
+Estate/Gift Tax,Revenue,2005,0.2,24.764,Revenue
+Estate/Gift Tax,Revenue,2006,0.2,27.877,Revenue
+Estate/Gift Tax,Revenue,2007,0.2,26.044,Revenue
+Estate/Gift Tax,Revenue,2008,0.2,28.844,Revenue
+Estate/Gift Tax,Revenue,2009,0.2,23.482,Revenue
+Estate/Gift Tax,Revenue,2010,0.1,18.885,Revenue
+Estate/Gift Tax,Revenue,2011,0.1,7.399,Revenue
+Estate/Gift Tax,Revenue,2012,0.1,13.973,Revenue
+Estate/Gift Tax,Revenue,2013,0.1,18.912,Revenue
+Estate/Gift Tax,Revenue,2014,0.1,19.3,Revenue
+Estate/Gift Tax,Revenue,2015,0.1,19.232,Revenue
+Estate/Gift Tax,Revenue,2016,0.1,21.354,Revenue
+Estate/Gift Tax,Revenue,2017,0.1,22.768,Revenue
+Excise Tax,Revenue,1968,1.6,14.079,Revenue
+Excise Tax,Revenue,1969,1.5,15.222,Revenue
+Excise Tax,Revenue,1970,1.5,15.705,Revenue
+Excise Tax,Revenue,1971,1.5,16.614,Revenue
+Excise Tax,Revenue,1972,1.3,15.477,Revenue
+Excise Tax,Revenue,1973,1.2,16.26,Revenue
+Excise Tax,Revenue,1974,1.1,16.844,Revenue
+Excise Tax,Revenue,1975,1,16.551,Revenue
+Excise Tax,Revenue,1976,0.9,16.963,Revenue
+Excise Tax,Revenue,1977,0.9,17.548,Revenue
+Excise Tax,Revenue,1978,0.8,18.376,Revenue
+Excise Tax,Revenue,1979,0.7,18.745,Revenue
+Excise Tax,Revenue,1980,0.9,24.329,Revenue
+Excise Tax,Revenue,1981,1.3,40.839,Revenue
+Excise Tax,Revenue,1982,1.1,36.311,Revenue
+Excise Tax,Revenue,1983,1,35.3,Revenue
+Excise Tax,Revenue,1984,0.9,37.361,Revenue
+Excise Tax,Revenue,1985,0.8,35.992,Revenue
+Excise Tax,Revenue,1986,0.7,32.919,Revenue
+Excise Tax,Revenue,1987,0.7,32.457,Revenue
+Excise Tax,Revenue,1988,0.7,35.227,Revenue
+Excise Tax,Revenue,1989,0.6,34.386,Revenue
+Excise Tax,Revenue,1990,0.6,35.345,Revenue
+Excise Tax,Revenue,1991,0.7,42.402,Revenue
+Excise Tax,Revenue,1992,0.7,45.569,Revenue
+Excise Tax,Revenue,1993,0.7,48.057,Revenue
+Excise Tax,Revenue,1994,0.8,55.225,Revenue
+Excise Tax,Revenue,1995,0.8,57.484,Revenue
+Excise Tax,Revenue,1996,0.7,54.014,Revenue
+Excise Tax,Revenue,1997,0.7,56.924,Revenue
+Excise Tax,Revenue,1998,0.6,57.673,Revenue
+Excise Tax,Revenue,1999,0.7,70.414,Revenue
+Excise Tax,Revenue,2000,0.7,68.865,Revenue
+Excise Tax,Revenue,2001,0.6,66.232,Revenue
+Excise Tax,Revenue,2002,0.6,66.989,Revenue
+Excise Tax,Revenue,2003,0.6,67.524,Revenue
+Excise Tax,Revenue,2004,0.6,69.855,Revenue
+Excise Tax,Revenue,2005,0.6,73.094,Revenue
+Excise Tax,Revenue,2006,0.5,73.961,Revenue
+Excise Tax,Revenue,2007,0.5,65.069,Revenue
+Excise Tax,Revenue,2008,0.5,67.334,Revenue
+Excise Tax,Revenue,2009,0.4,62.483,Revenue
+Excise Tax,Revenue,2010,0.5,66.909,Revenue
+Excise Tax,Revenue,2011,0.5,72.381,Revenue
+Excise Tax,Revenue,2012,0.5,79.061,Revenue
+Excise Tax,Revenue,2013,0.5,84.007,Revenue
+Excise Tax,Revenue,2014,0.5,93.368,Revenue
+Excise Tax,Revenue,2015,0.5,98.279,Revenue
+Excise Tax,Revenue,2016,0.5,95.026,Revenue
+Excise Tax,Revenue,2017,0.4,83.823,Revenue
+Income Tax,Revenue,1968,7.6,68.726,Revenue
+Income Tax,Revenue,1969,8.9,87.249,Revenue
+Income Tax,Revenue,1970,8.6,90.412,Revenue
+Income Tax,Revenue,1971,7.7,86.23,Revenue
+Income Tax,Revenue,1972,7.8,94.737,Revenue
+Income Tax,Revenue,1973,7.6,103.246,Revenue
+Income Tax,Revenue,1974,8,118.952,Revenue
+Income Tax,Revenue,1975,7.6,122.386,Revenue
+Income Tax,Revenue,1976,7.4,131.603,Revenue
+Income Tax,Revenue,1977,7.8,157.626,Revenue
+Income Tax,Revenue,1978,7.9,180.988,Revenue
+Income Tax,Revenue,1979,8.5,217.841,Revenue
+Income Tax,Revenue,1980,8.7,244.069,Revenue
+Income Tax,Revenue,1981,9.1,285.917,Revenue
+Income Tax,Revenue,1982,9,297.744,Revenue
+Income Tax,Revenue,1983,8.2,288.938,Revenue
+Income Tax,Revenue,1984,7.5,298.415,Revenue
+Income Tax,Revenue,1985,7.8,334.531,Revenue
+Income Tax,Revenue,1986,7.7,348.959,Revenue
+Income Tax,Revenue,1987,8.2,392.557,Revenue
+Income Tax,Revenue,1988,7.8,401.181,Revenue
+Income Tax,Revenue,1989,8,445.69,Revenue
+Income Tax,Revenue,1990,7.9,466.884,Revenue
+Income Tax,Revenue,1991,7.7,467.827,Revenue
+Income Tax,Revenue,1992,7.4,475.964,Revenue
+Income Tax,Revenue,1993,7.5,509.68,Revenue
+Income Tax,Revenue,1994,7.5,543.055,Revenue
+Income Tax,Revenue,1995,7.8,590.244,Revenue
+Income Tax,Revenue,1996,8.2,656.417,Revenue
+Income Tax,Revenue,1997,8.7,737.466,Revenue
+Income Tax,Revenue,1998,9.3,828.586,Revenue
+Income Tax,Revenue,1999,9.2,879.48,Revenue
+Income Tax,Revenue,2000,9.9,1004.462,Revenue
+Income Tax,Revenue,2001,9.4,994.339,Revenue
+Income Tax,Revenue,2002,7.9,858.345,Revenue
+Income Tax,Revenue,2003,7,793.699,Revenue
+Income Tax,Revenue,2004,6.7,808.959,Revenue
+Income Tax,Revenue,2005,7.2,927.222,Revenue
+Income Tax,Revenue,2006,7.6,1043.908,Revenue
+Income Tax,Revenue,2007,8.1,1163.472,Revenue
+Income Tax,Revenue,2008,7.8,1145.747,Revenue
+Income Tax,Revenue,2009,6.3,915.308,Revenue
+Income Tax,Revenue,2010,6.1,898.549,Revenue
+Income Tax,Revenue,2011,7.1,1091.473,Revenue
+Income Tax,Revenue,2012,7.1,1132.206,Revenue
+Income Tax,Revenue,2013,8,1316.405,Revenue
+Income Tax,Revenue,2014,8.1,1394.568,Revenue
+Income Tax,Revenue,2015,8.6,1540.802,Revenue
+Income Tax,Revenue,2016,8.4,1546.075,Revenue
+Income Tax,Revenue,2017,8.3,1587.12,Revenue
+Mandatory**,Federal Retirement,1968,0.6,5.741249,Spending
+Mandatory**,Federal Retirement,1969,0.7,6.398351,Spending
+Mandatory**,Federal Retirement,1970,0.7,7.232564,Spending
+Mandatory**,Federal Retirement,1971,0.8,8.926091,Spending
+Mandatory**,Federal Retirement,1972,0.9,10.390059,Spending
+Mandatory**,Federal Retirement,1973,0.9,12.486169,Spending
+Mandatory**,Federal Retirement,1974,1,14.694685,Spending
+Mandatory**,Federal Retirement,1975,1.2,19.288492,Spending
+Mandatory**,Federal Retirement,1976,1.1,20.175309,Spending
+Mandatory**,Federal Retirement,1977,1.1,22.833255,Spending
+Mandatory**,Federal Retirement,1978,1.1,25.256791,Spending
+Mandatory**,Federal Retirement,1979,1.1,28.950144,Spending
+Mandatory**,Federal Retirement,1980,1.2,33.686085,Spending
+Mandatory**,Federal Retirement,1981,1.2,39.096143,Spending
+Mandatory**,Federal Retirement,1982,1.3,42.644,Spending
+Mandatory**,Federal Retirement,1983,1.3,45.456123,Spending
+Mandatory**,Federal Retirement,1984,1.2,47.231247,Spending
+Mandatory**,Federal Retirement,1985,1.1,45.605105,Spending
+Mandatory**,Federal Retirement,1986,1,47.539787,Spending
+Mandatory**,Federal Retirement,1987,1.1,50.88912,Spending
+Mandatory**,Federal Retirement,1988,1.1,54.294934,Spending
+Mandatory**,Federal Retirement,1989,1,57.318,Spending
+Mandatory**,Federal Retirement,1990,1,59.974,Spending
+Mandatory**,Federal Retirement,1991,1.1,64.38,Spending
+Mandatory**,Federal Retirement,1992,1,66.488,Spending
+Mandatory**,Federal Retirement,1993,1,68.321,Spending
+Mandatory**,Federal Retirement,1994,1,72.286,Spending
+Mandatory**,Federal Retirement,1995,1,75.21,Spending
+Mandatory**,Federal Retirement,1996,1,77.281,Spending
+Mandatory**,Federal Retirement,1997,0.9,80.537,Spending
+Mandatory**,Federal Retirement,1998,0.9,82.536,Spending
+Mandatory**,Federal Retirement,1999,0.9,85.299,Spending
+Mandatory**,Federal Retirement,2000,0.9,87.823,Spending
+Mandatory**,Federal Retirement,2001,0.9,92.705,Spending
+Mandatory**,Federal Retirement,2002,0.9,96.081,Spending
+Mandatory**,Federal Retirement,2003,0.9,99.839,Spending
+Mandatory**,Federal Retirement,2004,0.9,103.649,Spending
+Mandatory**,Federal Retirement,2005,0.9,109.744,Spending
+Mandatory**,Federal Retirement,2006,0.8,113.097,Spending
+Mandatory**,Federal Retirement,2007,0.9,122.413,Spending
+Mandatory**,Federal Retirement,2008,0.9,128.872,Spending
+Mandatory**,Federal Retirement,2009,1,137.651,Spending
+Mandatory**,Federal Retirement,2010,0.9,138.384,Spending
+Mandatory**,Federal Retirement,2011,0.9,144.155,Spending
+Mandatory**,Federal Retirement,2012,0.9,143.52,Spending
+Mandatory**,Federal Retirement,2013,0.9,152.506,Spending
+Mandatory**,Federal Retirement,2014,0.9,157.507,Spending
+Mandatory**,Federal Retirement,2015,0.9,161.465,Spending
+Mandatory**,Federal Retirement,2016,0.9,163.791,Spending
+Mandatory**,Federal Retirement,2017,0.8,162.555,Spending
+Mandatory**,Income Security,1968,0.7,5.937,Spending
+Mandatory**,Income Security,1969,0.7,6.498,Spending
+Mandatory**,Income Security,1970,0.8,8.176,Spending
+Mandatory**,Income Security,1971,1.2,13.414,Spending
+Mandatory**,Income Security,1972,1.3,16.417,Spending
+Mandatory**,Income Security,1973,1.1,14.45,Spending
+Mandatory**,Income Security,1974,1.2,17.399,Spending
+Mandatory**,Income Security,1975,1.8,28.89,Spending
+Mandatory**,Income Security,1976,2.1,37.604,Spending
+Mandatory**,Income Security,1977,1.7,34.588,Spending
+Mandatory**,Income Security,1978,1.4,32.123,Spending
+Mandatory**,Income Security,1979,1.3,32.194,Spending
+Mandatory**,Income Security,1980,1.6,44.303,Spending
+Mandatory**,Income Security,1981,1.6,49.921,Spending
+Mandatory**,Income Security,1982,1.6,53.192,Spending
+Mandatory**,Income Security,1983,1.8,63.969,Spending
+Mandatory**,Income Security,1984,1.3,51.703,Spending
+Mandatory**,Income Security,1985,1.2,52.254,Spending
+Mandatory**,Income Security,1986,1.2,54.196,Spending
+Mandatory**,Income Security,1987,1.2,55.019,Spending
+Mandatory**,Income Security,1988,1.1,57.309,Spending
+Mandatory**,Income Security,1989,1.1,63.061,Spending
+Mandatory**,Income Security,1990,1.2,68.749,Spending
+Mandatory**,Income Security,1991,1.4,86.931,Spending
+Mandatory**,Income Security,1992,1.7,110.766,Spending
+Mandatory**,Income Security,1993,1.7,117.093,Spending
+Mandatory**,Income Security,1994,1.6,116.099,Spending
+Mandatory**,Income Security,1995,1.5,116.649,Spending
+Mandatory**,Income Security,1996,1.5,121.604,Spending
+Mandatory**,Income Security,1997,1.4,122.475,Spending
+Mandatory**,Income Security,1998,1.4,122.143,Spending
+Mandatory**,Income Security,1999,1.4,129.018,Spending
+Mandatory**,Income Security,2000,1.3,133.939,Spending
+Mandatory**,Income Security,2001,1.4,143.115,Spending
+Mandatory**,Income Security,2002,1.7,180.349,Spending
+Mandatory**,Income Security,2003,1.7,196.151,Spending
+Mandatory**,Income Security,2004,1.6,190.594,Spending
+Mandatory**,Income Security,2005,1.5,196.873,Spending
+Mandatory**,Income Security,2006,1.5,200.045,Spending
+Mandatory**,Income Security,2007,1.4,203.11,Spending
+Mandatory**,Income Security,2008,1.8,260.654,Spending
+Mandatory**,Income Security,2009,2.4,350.22,Spending
+Mandatory**,Income Security,2010,3,437.291,Spending
+Mandatory**,Income Security,2011,2.6,404.039,Spending
+Mandatory**,Income Security,2012,2.2,353.588,Spending
+Mandatory**,Income Security,2013,2.1,339.507,Spending
+Mandatory**,Income Security,2014,1.8,310.898,Spending
+Mandatory**,Income Security,2015,1.7,301.012,Spending
+Mandatory**,Income Security,2016,1.6,303.784,Spending
+Mandatory**,Income Security,2017,1.5,293.285,Spending
+Mandatory**,Medicaid,1968,0.2,1.806,Spending
+Mandatory**,Medicaid,1969,0.2,2.285,Spending
+Mandatory**,Medicaid,1970,0.3,2.727,Spending
+Mandatory**,Medicaid,1971,0.3,3.362,Spending
+Mandatory**,Medicaid,1972,0.4,4.601,Spending
+Mandatory**,Medicaid,1973,0.3,4.6,Spending
+Mandatory**,Medicaid,1974,0.4,5.818,Spending
+Mandatory**,Medicaid,1975,0.4,6.84,Spending
+Mandatory**,Medicaid,1976,0.5,8.568,Spending
+Mandatory**,Medicaid,1977,0.5,9.876,Spending
+Mandatory**,Medicaid,1978,0.5,10.68,Spending
+Mandatory**,Medicaid,1979,0.5,12.407,Spending
+Mandatory**,Medicaid,1980,0.5,13.957,Spending
+Mandatory**,Medicaid,1981,0.5,16.833,Spending
+Mandatory**,Medicaid,1982,0.5,17.391,Spending
+Mandatory**,Medicaid,1983,0.5,18.985,Spending
+Mandatory**,Medicaid,1984,0.5,20.061,Spending
+Mandatory**,Medicaid,1985,0.5,22.655,Spending
+Mandatory**,Medicaid,1986,0.6,24.995,Spending
+Mandatory**,Medicaid,1987,0.6,27.435,Spending
+Mandatory**,Medicaid,1988,0.6,30.462,Spending
+Mandatory**,Medicaid,1989,0.6,34.604,Spending
+Mandatory**,Medicaid,1990,0.7,41.103,Spending
+Mandatory**,Medicaid,1991,0.9,52.533,Spending
+Mandatory**,Medicaid,1992,1.1,67.827,Spending
+Mandatory**,Medicaid,1993,1.1,75.774,Spending
+Mandatory**,Medicaid,1994,1.1,82.034,Spending
+Mandatory**,Medicaid,1995,1.2,89.07,Spending
+Mandatory**,Medicaid,1996,1.2,91.99,Spending
+Mandatory**,Medicaid,1997,1.1,95.552,Spending
+Mandatory**,Medicaid,1998,1.1,101.234,Spending
+Mandatory**,Medicaid,1999,1.1,108.042,Spending
+Mandatory**,Medicaid,2000,1.2,117.921,Spending
+Mandatory**,Medicaid,2001,1.2,129.374,Spending
+Mandatory**,Medicaid,2002,1.4,147.512,Spending
+Mandatory**,Medicaid,2003,1.4,160.693,Spending
+Mandatory**,Medicaid,2004,1.5,176.231,Spending
+Mandatory**,Medicaid,2005,1.4,181.72,Spending
+Mandatory**,Medicaid,2006,1.3,180.625,Spending
+Mandatory**,Medicaid,2007,1.3,190.624,Spending
+Mandatory**,Medicaid,2008,1.4,201.426,Spending
+Mandatory**,Medicaid,2009,1.7,250.924,Spending
+Mandatory**,Medicaid,2010,1.8,272.771,Spending
+Mandatory**,Medicaid,2011,1.8,274.964,Spending
+Mandatory**,Medicaid,2012,1.6,250.534,Spending
+Mandatory**,Medicaid,2013,1.6,265.392,Spending
+Mandatory**,Medicaid,2014,1.7,301.472,Spending
+Mandatory**,Medicaid,2015,1.9,349.762,Spending
+Mandatory**,Medicaid,2016,2,368.28,Spending
+Mandatory**,Medicaid,2017,2,374.682,Spending
+Mandatory**,Medicare,1968,0.6,5.126,Spending
+Mandatory**,Medicare,1969,0.6,6.299,Spending
+Mandatory**,Medicare,1970,0.6,6.784,Spending
+Mandatory**,Medicare,1971,0.7,7.478,Spending
+Mandatory**,Medicare,1972,0.7,8.364,Spending
+Mandatory**,Medicare,1973,0.7,9.04,Spending
+Mandatory**,Medicare,1974,0.7,10.681,Spending
+Mandatory**,Medicare,1975,0.9,14.121,Spending
+Mandatory**,Medicare,1976,0.9,16.942,Spending
+Mandatory**,Medicare,1977,1,20.779,Spending
+Mandatory**,Medicare,1978,1.1,24.304,Spending
+Mandatory**,Medicare,1979,1.1,28.193,Spending
+Mandatory**,Medicare,1980,1.2,33.988,Spending
+Mandatory**,Medicare,1981,1.3,41.3,Spending
+Mandatory**,Medicare,1982,1.5,49.167,Spending
+Mandatory**,Medicare,1983,1.6,55.525,Spending
+Mandatory**,Medicare,1984,1.5,61.138,Spending
+Mandatory**,Medicare,1985,1.6,69.662,Spending
+Mandatory**,Medicare,1986,1.6,74.184,Spending
+Mandatory**,Medicare,1987,1.7,79.913,Spending
+Mandatory**,Medicare,1988,1.7,85.704,Spending
+Mandatory**,Medicare,1989,1.7,93.183,Spending
+Mandatory**,Medicare,1990,1.8,107.048,Spending
+Mandatory**,Medicare,1991,1.9,114.219,Spending
+Mandatory**,Medicare,1992,2,129.41,Spending
+Mandatory**,Medicare,1993,2.1,143.208,Spending
+Mandatory**,Medicare,1994,2.2,159.58,Spending
+Mandatory**,Medicare,1995,2.3,177.125,Spending
+Mandatory**,Medicare,1996,2.4,191.31,Spending
+Mandatory**,Medicare,1997,2.5,207.862,Spending
+Mandatory**,Medicare,1998,2.4,210.98,Spending
+Mandatory**,Medicare,1999,2.2,209.255,Spending
+Mandatory**,Medicare,2000,2.1,216.022,Spending
+Mandatory**,Medicare,2001,2.3,237.859,Spending
+Mandatory**,Medicare,2002,2.3,253.682,Spending
+Mandatory**,Medicare,2003,2.4,274.15,Spending
+Mandatory**,Medicare,2004,2.5,297.03,Spending
+Mandatory**,Medicare,2005,2.6,335.121,Spending
+Mandatory**,Medicare,2006,2.8,376.819,Spending
+Mandatory**,Medicare,2007,3,436.115,Spending
+Mandatory**,Medicare,2008,3.1,455.989,Spending
+Mandatory**,Medicare,2009,3.5,499.923,Spending
+Mandatory**,Medicare,2010,3.5,520.485,Spending
+Mandatory**,Medicare,2011,3.6,559.644,Spending
+Mandatory**,Medicare,2012,3.4,551.152,Spending
+Mandatory**,Medicare,2013,3.5,585.223,Spending
+Mandatory**,Medicare,2014,3.5,599.808,Spending
+Mandatory**,Medicare,2015,3.5,634.106,Spending
+Mandatory**,Medicare,2016,3.7,692.489,Spending
+Mandatory**,Medicare,2017,3.7,702.309,Spending
+Mandatory**,Other,1968,1.4,12.162,Spending
+Mandatory**,Other,1969,1,10.274,Spending
+Mandatory**,Other,1970,1,10.915,Spending
+Mandatory**,Other,1971,0.9,10.46,Spending
+Mandatory**,Other,1972,1.1,12.863,Spending
+Mandatory**,Other,1973,1.3,17.388,Spending
+Mandatory**,Other,1974,1.1,16.742,Spending
+Mandatory**,Other,1975,1.5,23.838,Spending
+Mandatory**,Other,1976,1,18.694,Spending
+Mandatory**,Other,1977,0.9,18.564,Spending
+Mandatory**,Other,1978,1.3,29.023,Spending
+Mandatory**,Other,1979,1.1,28.582,Spending
+Mandatory**,Other,1980,1.2,33.628,Spending
+Mandatory**,Other,1981,1.2,38.556,Spending
+Mandatory**,Other,1982,1.2,38.207,Spending
+Mandatory**,Other,1983,1.2,41.683,Spending
+Mandatory**,Other,1984,0.8,33.003,Spending
+Mandatory**,Other,1985,1.3,55.147,Spending
+Mandatory**,Other,1986,1,47.617,Spending
+Mandatory**,Other,1987,0.8,39.39,Spending
+Mandatory**,Other,1988,0.8,42.839,Spending
+Mandatory**,Other,1989,0.9,49.527,Spending
+Mandatory**,Other,1990,1.5,85.766,Spending
+Mandatory**,Other,1991,1.6,98.857,Spending
+Mandatory**,Other,1992,0.6,38.568,Spending
+Mandatory**,Other,1993,0.1,10.143,Spending
+Mandatory**,Other,1994,0.2,17.608,Spending
+Mandatory**,Other,1995,0.1,4.884,Spending
+Mandatory**,Other,1996,0.1,8.383,Spending
+Mandatory**,Other,1997,0.1,5.033,Spending
+Mandatory**,Other,1998,0.3,26.102,Spending
+Mandatory**,Other,1999,0.4,36.145,Spending
+Mandatory**,Other,2000,0.4,43.678,Spending
+Mandatory**,Other,2001,0.4,41.201,Spending
+Mandatory**,Other,2002,0.4,38.86,Spending
+Mandatory**,Other,2003,0.4,50.225,Spending
+Mandatory**,Other,2004,0.5,55.513,Spending
+Mandatory**,Other,2005,0.5,65.578,Spending
+Mandatory**,Other,2006,0.8,103.285,Spending
+Mandatory**,Other,2007,0.4,55.782,Spending
+Mandatory**,Other,2008,0.5,76.746,Spending
+Mandatory**,Other,2009,2.2,321.771,Spending
+Mandatory**,Other,2010,-0.1,-17.758,Spending
+Mandatory**,Other,2011,0.4,56.111,Spending
+Mandatory**,Other,2012,0.8,124.22,Spending
+Mandatory**,Other,2013,0.6,105.462,Spending
+Mandatory**,Other,2014,0.4,74.479,Spending
+Mandatory**,Other,2015,0.7,134.241,Spending
+Mandatory**,Other,2016,0.6,119.767,Spending
+Mandatory**,Other,2017,1,194.752,Spending
+Mandatory**,Social Security,1968,2.6,23.293,Spending
+Mandatory**,Social Security,1969,2.7,26.7,Spending
+Mandatory**,Social Security,1970,2.8,29.647,Spending
+Mandatory**,Social Security,1971,3.1,35.131,Spending
+Mandatory**,Social Security,1972,3.2,39.364,Spending
+Mandatory**,Social Security,1973,3.6,48.176,Spending
+Mandatory**,Social Security,1974,3.7,54.99,Spending
+Mandatory**,Social Security,1975,3.9,63.557,Spending
+Mandatory**,Social Security,1976,4.1,72.699,Spending
+Mandatory**,Social Security,1977,4.1,83.69,Spending
+Mandatory**,Social Security,1978,4.1,92.447,Spending
+Mandatory**,Social Security,1979,4,102.594,Spending
+Mandatory**,Social Security,1980,4.2,117.053,Spending
+Mandatory**,Social Security,1981,4.4,137.881,Spending
+Mandatory**,Social Security,1982,4.6,153.916,Spending
+Mandatory**,Social Security,1983,4.8,168.513,Spending
+Mandatory**,Social Security,1984,4.5,176.052,Spending
+Mandatory**,Social Security,1985,4.4,186.432,Spending
+Mandatory**,Social Security,1986,4.3,196.547,Spending
+Mandatory**,Social Security,1987,4.3,205.072,Spending
+Mandatory**,Social Security,1988,4.2,216.808,Spending
+Mandatory**,Social Security,1989,4.1,230.395,Spending
+Mandatory**,Social Security,1990,4.2,246.496,Spending
+Mandatory**,Social Security,1991,4.4,266.764,Spending
+Mandatory**,Social Security,1992,4.4,285.167,Spending
+Mandatory**,Social Security,1993,4.4,301.985,Spending
+Mandatory**,Social Security,1994,4.4,316.914,Spending
+Mandatory**,Social Security,1995,4.4,333.273,Spending
+Mandatory**,Social Security,1996,4.3,347.051,Spending
+Mandatory**,Social Security,1997,4.3,362.296,Spending
+Mandatory**,Social Security,1998,4.2,376.119,Spending
+Mandatory**,Social Security,1999,4.1,386.991,Spending
+Mandatory**,Social Security,2000,4,406.048,Spending
+Mandatory**,Social Security,2001,4.1,429.368,Spending
+Mandatory**,Social Security,2002,4.2,452.073,Spending
+Mandatory**,Social Security,2003,4.2,470.453,Spending
+Mandatory**,Social Security,2004,4.1,491.537,Spending
+Mandatory**,Social Security,2005,4,518.712,Spending
+Mandatory**,Social Security,2006,4,543.911,Spending
+Mandatory**,Social Security,2007,4.1,581.442,Spending
+Mandatory**,Social Security,2008,4.1,612.11,Spending
+Mandatory**,Social Security,2009,4.7,677.726,Spending
+Mandatory**,Social Security,2010,4.7,700.752,Spending
+Mandatory**,Social Security,2011,4.7,724.923,Spending
+Mandatory**,Social Security,2012,4.8,767.714,Spending
+Mandatory**,Social Security,2013,4.9,807.841,Spending
+Mandatory**,Social Security,2014,4.9,844.876,Spending
+Mandatory**,Social Security,2015,4.9,881.891,Spending
+Mandatory**,Social Security,2016,4.9,910.282,Spending
+Mandatory**,Social Security,2017,4.9,939.204,Spending
+Mandatory**,Veterans' Programs,1968,0.6,5.622855,Spending
+Mandatory**,Veterans' Programs,1969,0.6,6.168532,Spending
+Mandatory**,Veterans' Programs,1970,0.7,7.024876,Spending
+Mandatory**,Veterans' Programs,1971,0.7,8.104382,Spending
+Mandatory**,Veterans' Programs,1972,0.7,8.775757,Spending
+Mandatory**,Veterans' Programs,1973,0.7,9.840183,Spending
+Mandatory**,Veterans' Programs,1974,0.7,10.52797,Spending
+Mandatory**,Veterans' Programs,1975,0.8,12.906191,Spending
+Mandatory**,Veterans' Programs,1976,0.8,14.408229,Spending
+Mandatory**,Veterans' Programs,1977,0.7,13.406185,Spending
+Mandatory**,Veterans' Programs,1978,0.6,13.577964,Spending
+Mandatory**,Veterans' Programs,1979,0.5,14.067163,Spending
+Mandatory**,Veterans' Programs,1980,0.5,14.618798,Spending
+Mandatory**,Veterans' Programs,1981,0.5,15.825181,Spending
+Mandatory**,Veterans' Programs,1982,0.5,16.272473,Spending
+Mandatory**,Veterans' Programs,1983,0.5,16.438086,Spending
+Mandatory**,Veterans' Programs,1984,0.4,16.315193,Spending
+Mandatory**,Veterans' Programs,1985,0.4,16.438959,Spending
+Mandatory**,Veterans' Programs,1986,0.4,16.643779,Spending
+Mandatory**,Veterans' Programs,1987,0.3,16.465334,Spending
+Mandatory**,Veterans' Programs,1988,0.3,17.612171,Spending
+Mandatory**,Veterans' Programs,1989,0.3,17.988,Spending
+Mandatory**,Veterans' Programs,1990,0.3,16.469,Spending
+Mandatory**,Veterans' Programs,1991,0.3,18.272,Spending
+Mandatory**,Veterans' Programs,1992,0.3,19.464,Spending
+Mandatory**,Veterans' Programs,1993,0.3,20.294,Spending
+Mandatory**,Veterans' Programs,1994,0.3,21.461,Spending
+Mandatory**,Veterans' Programs,1995,0.3,21.296,Spending
+Mandatory**,Veterans' Programs,1996,0.3,20.048,Spending
+Mandatory**,Veterans' Programs,1997,0.3,21.768,Spending
+Mandatory**,Veterans' Programs,1998,0.3,23.778,Spending
+Mandatory**,Veterans' Programs,1999,0.3,24.734,Spending
+Mandatory**,Veterans' Programs,2000,0.3,27.058,Spending
+Mandatory**,Veterans' Programs,2001,0.2,23.35,Spending
+Mandatory**,Veterans' Programs,2002,0.3,27.862,Spending
+Mandatory**,Veterans' Programs,2003,0.3,31.964,Spending
+Mandatory**,Veterans' Programs,2004,0.3,31.87,Spending
+Mandatory**,Veterans' Programs,2005,0.3,40.351,Spending
+Mandatory**,Veterans' Programs,2006,0.3,38.35,Spending
+Mandatory**,Veterans' Programs,2007,0.3,38.428,Spending
+Mandatory**,Veterans' Programs,2008,0.3,44.528,Spending
+Mandatory**,Veterans' Programs,2009,0.3,49.6,Spending
+Mandatory**,Veterans' Programs,2010,0.4,58.268,Spending
+Mandatory**,Veterans' Programs,2011,0.5,71.009,Spending
+Mandatory**,Veterans' Programs,2012,0.4,67.987,Spending
+Mandatory**,Veterans' Programs,2013,0.5,80.379,Spending
+Mandatory**,Veterans' Programs,2014,0.5,86.758,Spending
+Mandatory**,Veterans' Programs,2015,0.5,92.434,Spending
+Mandatory**,Veterans' Programs,2016,0.6,106.518,Spending
+Mandatory**,Veterans' Programs,2017,0.5,105.019,Spending
+Miscellaneous,Revenue,1968,0.3,2.491,Revenue
+Miscellaneous,Revenue,1969,0.3,2.908,Revenue
+Miscellaneous,Revenue,1970,0.3,3.425,Revenue
+Miscellaneous,Revenue,1971,0.3,3.859,Revenue
+Miscellaneous,Revenue,1972,0.3,3.632,Revenue
+Miscellaneous,Revenue,1973,0.3,3.92,Revenue
+Miscellaneous,Revenue,1974,0.4,5.368,Revenue
+Miscellaneous,Revenue,1975,0.4,6.711,Revenue
+Miscellaneous,Revenue,1976,0.4,8.026,Revenue
+Miscellaneous,Revenue,1977,0.3,6.531,Revenue
+Miscellaneous,Revenue,1978,0.3,7.42,Revenue
+Miscellaneous,Revenue,1979,0.4,9.25,Revenue
+Miscellaneous,Revenue,1980,0.5,12.748,Revenue
+Miscellaneous,Revenue,1981,0.4,13.789,Revenue
+Miscellaneous,Revenue,1982,0.5,16.161,Revenue
+Miscellaneous,Revenue,1983,0.4,15.6,Revenue
+Miscellaneous,Revenue,1984,0.4,17.013,Revenue
+Miscellaneous,Revenue,1985,0.4,18.519,Revenue
+Miscellaneous,Revenue,1986,0.4,19.948,Revenue
+Miscellaneous,Revenue,1987,0.4,19.451,Revenue
+Miscellaneous,Revenue,1988,0.4,20.195,Revenue
+Miscellaneous,Revenue,1989,0.4,23.242,Revenue
+Miscellaneous,Revenue,1990,0.5,27.968,Revenue
+Miscellaneous,Revenue,1991,0.4,23.57,Revenue
+Miscellaneous,Revenue,1992,0.4,27.214,Revenue
+Miscellaneous,Revenue,1993,0.3,19.398,Revenue
+Miscellaneous,Revenue,1994,0.3,23.102,Revenue
+Miscellaneous,Revenue,1995,0.4,28.521,Revenue
+Miscellaneous,Revenue,1996,0.3,25.525,Revenue
+Miscellaneous,Revenue,1997,0.3,25.405,Revenue
+Miscellaneous,Revenue,1998,0.4,32.588,Revenue
+Miscellaneous,Revenue,1999,0.4,34.927,Revenue
+Miscellaneous,Revenue,2000,0.4,42.799,Revenue
+Miscellaneous,Revenue,2001,0.4,37.7,Revenue
+Miscellaneous,Revenue,2002,0.3,33.889,Revenue
+Miscellaneous,Revenue,2003,0.3,34.514,Revenue
+Miscellaneous,Revenue,2004,0.3,32.608,Revenue
+Miscellaneous,Revenue,2005,0.3,32.745,Revenue
+Miscellaneous,Revenue,2006,0.3,44.577,Revenue
+Miscellaneous,Revenue,2007,0.3,47.54,Revenue
+Miscellaneous,Revenue,2008,0.3,49.997,Revenue
+Miscellaneous,Revenue,2009,0.4,52.117,Revenue
+Miscellaneous,Revenue,2010,0.7,96.814,Revenue
+Miscellaneous,Revenue,2011,0.7,102.817,Revenue
+Miscellaneous,Revenue,2012,0.7,106.84,Revenue
+Miscellaneous,Revenue,2013,0.6,102.641,Revenue
+Miscellaneous,Revenue,2014,0.8,136.14,Revenue
+Miscellaneous,Revenue,2015,0.8,147.479,Revenue
+Miscellaneous,Revenue,2016,0.8,156.032,Revenue
+Miscellaneous,Revenue,2017,0.7,128.952,Revenue
+Offsetting Receipts*,Revenue,1968,1.2,10.622,Revenue
+Offsetting Receipts*,Revenue,1969,1.1,11,Revenue
+Offsetting Receipts*,Revenue,1970,1.1,11.491,Revenue
+Offsetting Receipts*,Revenue,1971,1.3,14.075,Revenue
+Offsetting Receipts*,Revenue,1972,1.2,14.116,Revenue
+Offsetting Receipts*,Revenue,1973,1.3,18.016,Revenue
+Offsetting Receipts*,Revenue,1974,1.4,21.15,Revenue
+Offsetting Receipts*,Revenue,1975,1.1,18.318,Revenue
+Offsetting Receipts*,Revenue,1976,1.1,19.603,Revenue
+Offsetting Receipts*,Revenue,1977,1.1,21.492,Revenue
+Offsetting Receipts*,Revenue,1978,1,22.834,Revenue
+Offsetting Receipts*,Revenue,1979,1,25.59,Revenue
+Offsetting Receipts*,Revenue,1980,1,29.15,Revenue
+Offsetting Receipts*,Revenue,1981,1.2,37.85,Revenue
+Offsetting Receipts*,Revenue,1982,1.1,36.03,Revenue
+Offsetting Receipts*,Revenue,1983,1.3,45.323,Revenue
+Offsetting Receipts*,Revenue,1984,1.1,44.247,Revenue
+Offsetting Receipts*,Revenue,1985,1.1,47.121,Revenue
+Offsetting Receipts*,Revenue,1986,1,45.878,Revenue
+Offsetting Receipts*,Revenue,1987,1.1,52.938,Revenue
+Offsetting Receipts*,Revenue,1988,1.1,56.834,Revenue
+Offsetting Receipts*,Revenue,1989,1.1,60.146,Revenue
+Offsetting Receipts*,Revenue,1990,1,57.537,Revenue
+Offsetting Receipts*,Revenue,1991,1.7,105.456,Revenue
+Offsetting Receipts*,Revenue,1992,1.1,69.308,Revenue
+Offsetting Receipts*,Revenue,1993,1,65.898,Revenue
+Offsetting Receipts*,Revenue,1994,1,68.502,Revenue
+Offsetting Receipts*,Revenue,1995,1,78.66,Revenue
+Offsetting Receipts*,Revenue,1996,0.9,70.969,Revenue
+Offsetting Receipts*,Revenue,1997,1,85.428,Revenue
+Offsetting Receipts*,Revenue,1998,0.9,83.547,Revenue
+Offsetting Receipts*,Revenue,1999,0.8,79.51,Revenue
+Offsetting Receipts*,Revenue,2000,0.8,81.114,Revenue
+Offsetting Receipts*,Revenue,2001,0.8,89.334,Revenue
+Offsetting Receipts*,Revenue,2002,0.8,90.424,Revenue
+Offsetting Receipts*,Revenue,2003,0.9,100.988,Revenue
+Offsetting Receipts*,Revenue,2004,0.9,108.893,Revenue
+Offsetting Receipts*,Revenue,2005,1,128.669,Revenue
+Offsetting Receipts*,Revenue,2006,1.1,144.309,Revenue
+Offsetting Receipts*,Revenue,2007,1.2,177.927,Revenue
+Offsetting Receipts*,Revenue,2008,1.3,185.422,Revenue
+Offsetting Receipts*,Revenue,2009,1.3,194.576,Revenue
+Offsetting Receipts*,Revenue,2010,1.3,196.474,Revenue
+Offsetting Receipts*,Revenue,2011,1.4,208.879,Revenue
+Offsetting Receipts*,Revenue,2012,1.4,228.265,Revenue
+Offsetting Receipts*,Revenue,2013,1.8,304.675,Revenue
+Offsetting Receipts*,Revenue,2014,1.6,277.337,Revenue
+Offsetting Receipts*,Revenue,2015,1.4,258.365,Revenue
+Offsetting Receipts*,Revenue,2016,1.3,237.581,Revenue
+Offsetting Receipts*,Revenue,2017,1.3,252.962,Revenue
+Payroll Tax,Revenue,1968,3.8,33.923,Revenue
+Payroll Tax,Revenue,1969,4,39.015,Revenue
+Payroll Tax,Revenue,1970,4.2,44.362,Revenue
+Payroll Tax,Revenue,1971,4.2,47.325,Revenue
+Payroll Tax,Revenue,1972,4.3,52.574,Revenue
+Payroll Tax,Revenue,1973,4.7,63.115,Revenue
+Payroll Tax,Revenue,1974,5.1,75.071,Revenue
+Payroll Tax,Revenue,1975,5.2,84.534,Revenue
+Payroll Tax,Revenue,1976,5.1,90.769,Revenue
+Payroll Tax,Revenue,1977,5.2,106.485,Revenue
+Payroll Tax,Revenue,1978,5.3,120.967,Revenue
+Payroll Tax,Revenue,1979,5.4,138.939,Revenue
+Payroll Tax,Revenue,1980,5.6,157.803,Revenue
+Payroll Tax,Revenue,1981,5.8,182.72,Revenue
+Payroll Tax,Revenue,1982,6.1,201.498,Revenue
+Payroll Tax,Revenue,1983,5.9,208.994,Revenue
+Payroll Tax,Revenue,1984,6.1,239.376,Revenue
+Payroll Tax,Revenue,1985,6.2,265.163,Revenue
+Payroll Tax,Revenue,1986,6.3,283.901,Revenue
+Payroll Tax,Revenue,1987,6.3,303.318,Revenue
+Payroll Tax,Revenue,1988,6.5,334.335,Revenue
+Payroll Tax,Revenue,1989,6.5,359.416,Revenue
+Payroll Tax,Revenue,1990,6.4,380.047,Revenue
+Payroll Tax,Revenue,1991,6.5,396.016,Revenue
+Payroll Tax,Revenue,1992,6.4,413.689,Revenue
+Payroll Tax,Revenue,1993,6.3,428.3,Revenue
+Payroll Tax,Revenue,1994,6.4,461.475,Revenue
+Payroll Tax,Revenue,1995,6.4,484.473,Revenue
+Payroll Tax,Revenue,1996,6.4,509.414,Revenue
+Payroll Tax,Revenue,1997,6.4,539.371,Revenue
+Payroll Tax,Revenue,1998,6.4,571.831,Revenue
+Payroll Tax,Revenue,1999,6.4,611.833,Revenue
+Payroll Tax,Revenue,2000,6.4,652.852,Revenue
+Payroll Tax,Revenue,2001,6.6,693.967,Revenue
+Payroll Tax,Revenue,2002,6.4,700.76,Revenue
+Payroll Tax,Revenue,2003,6.3,712.978,Revenue
+Payroll Tax,Revenue,2004,6.1,733.407,Revenue
+Payroll Tax,Revenue,2005,6.2,794.125,Revenue
+Payroll Tax,Revenue,2006,6.1,837.821,Revenue
+Payroll Tax,Revenue,2007,6.1,869.607,Revenue
+Payroll Tax,Revenue,2008,6.1,900.155,Revenue
+Payroll Tax,Revenue,2009,6.2,890.917,Revenue
+Payroll Tax,Revenue,2010,5.8,864.814,Revenue
+Payroll Tax,Revenue,2011,5.3,818.792,Revenue
+Payroll Tax,Revenue,2012,5.3,845.314,Revenue
+Payroll Tax,Revenue,2013,5.7,947.82,Revenue
+Payroll Tax,Revenue,2014,5.9,1023.458,Revenue
+Payroll Tax,Revenue,2015,5.9,1065.257,Revenue
+Payroll Tax,Revenue,2016,6,1115.065,Revenue
+Payroll Tax,Revenue,2017,6.1,1161.897,Revenue
+Revenue,Spending,1968,18.2,152.973,Ignore
+Revenue,Spending,1969,20.1,186.882,Ignore
+Revenue,Spending,1970,19.5,192.807,Ignore
+Revenue,Spending,1971,18,187.139,Ignore
+Revenue,Spending,1972,18.2,207.309,Ignore
+Revenue,Spending,1973,18.3,230.799,Ignore
+Revenue,Spending,1974,19.1,263.224,Ignore
+Revenue,Spending,1975,18.4,279.09,Ignore
+Revenue,Spending,1976,17.7,298.06,Ignore
+Revenue,Spending,1977,18.6,355.559,Ignore
+Revenue,Spending,1978,18.5,399.561,Ignore
+Revenue,Spending,1979,19,463.302,Ignore
+Revenue,Spending,1980,19.5,517.112,Ignore
+Revenue,Spending,1981,20.3,599.272,Ignore
+Revenue,Spending,1982,19.7,617.766,Ignore
+Revenue,Spending,1983,18.3,600.562,Ignore
+Revenue,Spending,1984,18,666.438,Ignore
+Revenue,Spending,1985,18.3,734.037,Ignore
+Revenue,Spending,1986,18,769.155,Ignore
+Revenue,Spending,1987,19,854.287,Ignore
+Revenue,Spending,1988,18.7,909.238,Ignore
+Revenue,Spending,1989,18.9,991.104,Ignore
+Revenue,Spending,1990,18.4,1031.958,Ignore
+Revenue,Spending,1991,19,1054.988,Ignore
+Revenue,Spending,1992,18.1,1091.208,Ignore
+Revenue,Spending,1993,18,1154.334,Ignore
+Revenue,Spending,1994,18.5,1258.566,Ignore
+Revenue,Spending,1995,18.8,1351.79,Ignore
+Revenue,Spending,1996,19.1,1453.053,Ignore
+Revenue,Spending,1997,19.6,1579.232,Ignore
+Revenue,Spending,1998,20.1,1721.728,Ignore
+Revenue,Spending,1999,20,1827.452,Ignore
+Revenue,Spending,2000,20.8,2025.191,Ignore
+Revenue,Spending,2001,19.6,1991.082,Ignore
+Revenue,Spending,2002,17.8,1853.136,Ignore
+Revenue,Spending,2003,16.6,1782.314,Ignore
+Revenue,Spending,2004,16.5,1880.114,Ignore
+Revenue,Spending,2005,17.7,2153.611,Ignore
+Revenue,Spending,2006,18.7,2406.869,Ignore
+Revenue,Spending,2007,19.1,2567.985,Ignore
+Revenue,Spending,2008,18.4,2523.991,Ignore
+Revenue,Spending,2009,15.9,2104.989,Ignore
+Revenue,Spending,2010,15.9,2162.706,Ignore
+Revenue,Spending,2011,16.4,2303.466,Ignore
+Revenue,Spending,2012,16.7,2449.99,Ignore
+Revenue,Spending,2013,18.6,2775.106,Ignore
+Revenue,Spending,2014,19.1,3021.491,Ignore
+Revenue,Spending,2015,19.5,3249.887,Ignore
+Revenue,Spending,2016,19,3267.961,Ignore
+Revenue,Spending,2017,18.6,3316.182,Ignore
+Spending,Discretionary,1968,13.1,117.978,Ignore
+Spending,Discretionary,1969,11.9,117.318,Ignore
+Spending,Discretionary,1970,11.5,120.254,Ignore
+Spending,Discretionary,1971,10.9,122.531,Ignore
+Spending,Discretionary,1972,10.5,128.544,Ignore
+Spending,Discretionary,1973,9.6,130.394,Ignore
+Spending,Discretionary,1974,9.3,138.207,Ignore
+Spending,Discretionary,1975,9.8,157.965,Ignore
+Spending,Discretionary,1976,9.8,175.577,Ignore
+Spending,Discretionary,1977,9.7,197.073,Ignore
+Spending,Discretionary,1978,9.6,218.71,Ignore
+Spending,Discretionary,1979,9.3,239.998,Ignore
+Spending,Discretionary,1980,9.9,276.324,Ignore
+Spending,Discretionary,1981,9.8,307.913,Ignore
+Spending,Discretionary,1982,9.8,325.952,Ignore
+Spending,Discretionary,1983,10,353.31,Ignore
+Spending,Discretionary,1984,9.6,379.447,Ignore
+Spending,Discretionary,1985,9.7,415.793,Ignore
+Spending,Discretionary,1986,9.7,438.52,Ignore
+Spending,Discretionary,1987,9.3,444.161,Ignore
+Spending,Discretionary,1988,9,464.418,Ignore
+Spending,Discretionary,1989,8.8,488.832,Ignore
+Spending,Discretionary,1990,8.5,500.578,Ignore
+Spending,Discretionary,1991,8.7,533.278,Ignore
+Spending,Discretionary,1992,8.3,533.803,Ignore
+Spending,Discretionary,1993,7.9,539.753,Ignore
+Spending,Discretionary,1994,7.5,541.34,Ignore
+Spending,Discretionary,1995,7.2,544.761,Ignore
+Spending,Discretionary,1996,6.7,532.733,Ignore
+Spending,Discretionary,1997,6.4,547.037,Ignore
+Spending,Discretionary,1998,6.2,551.995,Ignore
+Spending,Discretionary,1999,6,572.113,Ignore
+Spending,Discretionary,2000,6.1,614.626,Ignore
+Spending,Discretionary,2001,6.1,649.041,Ignore
+Spending,Discretionary,2002,6.7,733.95,Ignore
+Spending,Discretionary,2003,7.3,824.339,Ignore
+Spending,Discretionary,2004,7.4,895.065,Ignore
+Spending,Discretionary,2005,7.5,968.541,Ignore
+Spending,Discretionary,2006,7.4,1016.624,Ignore
+Spending,Discretionary,2007,7.3,1041.59,Ignore
+Spending,Discretionary,2008,7.7,1134.884,Ignore
+Spending,Discretionary,2009,8.6,1237.536,Ignore
+Spending,Discretionary,2010,9.1,1347.166,Ignore
+Spending,Discretionary,2011,8.8,1347.137,Ignore
+Spending,Discretionary,2012,8,1286.087,Ignore
+Spending,Discretionary,2013,7.3,1202.128,Ignore
+Spending,Discretionary,2014,6.8,1178.674,Ignore
+Spending,Discretionary,2015,6.5,1168.656,Ignore
+Spending,Discretionary,2016,6.4,1185.249,Ignore
+Spending,Discretionary,2017,6.3,1200.159,Ignore
+Spending,Mandatory**,1968,6.6,59.688,Ignore
+Spending,Mandatory**,1969,6.6,64.623,Ignore
+Spending,Mandatory**,1970,6.9,72.506,Ignore
+Spending,Mandatory**,1971,7.8,86.875,Ignore
+Spending,Mandatory**,1972,8.3,100.775,Ignore
+Spending,Mandatory**,1973,8.6,115.98,Ignore
+Spending,Mandatory**,1974,8.8,130.853,Ignore
+Spending,Mandatory**,1975,10.5,169.441,Ignore
+Spending,Mandatory**,1976,10.6,189.091,Ignore
+Spending,Mandatory**,1977,10,203.736,Ignore
+Spending,Mandatory**,1978,10,227.412,Ignore
+Spending,Mandatory**,1979,9.6,246.987,Ignore
+Spending,Mandatory**,1980,10.4,291.234,Ignore
+Spending,Mandatory**,1981,10.8,339.412,Ignore
+Spending,Mandatory**,1982,11.2,370.789,Ignore
+Spending,Mandatory**,1983,11.6,410.569,Ignore
+Spending,Mandatory**,1984,10.3,405.503,Ignore
+Spending,Mandatory**,1985,10.5,448.194,Ignore
+Spending,Mandatory**,1986,10.2,461.723,Ignore
+Spending,Mandatory**,1987,9.9,474.183,Ignore
+Spending,Mandatory**,1988,9.8,505.029,Ignore
+Spending,Mandatory**,1989,9.8,546.076,Ignore
+Spending,Mandatory**,1990,10.6,625.605,Ignore
+Spending,Mandatory**,1991,11.5,701.956,Ignore
+Spending,Mandatory**,1992,11.2,717.69,Ignore
+Spending,Mandatory**,1993,10.8,736.818,Ignore
+Spending,Mandatory**,1994,10.9,785.982,Ignore
+Spending,Mandatory**,1995,10.8,817.507,Ignore
+Spending,Mandatory**,1996,10.8,857.667,Ignore
+Spending,Mandatory**,1997,10.6,895.523,Ignore
+Spending,Mandatory**,1998,10.5,942.892,Ignore
+Spending,Mandatory**,1999,10.3,979.484,Ignore
+Spending,Mandatory**,2000,10.2,1032.489,Ignore
+Spending,Mandatory**,2001,10.4,1096.972,Ignore
+Spending,Mandatory**,2002,11,1196.419,Ignore
+Spending,Mandatory**,2003,11.3,1283.475,Ignore
+Spending,Mandatory**,2004,11.1,1346.424,Ignore
+Spending,Mandatory**,2005,11.2,1448.099,Ignore
+Spending,Mandatory**,2006,11.4,1556.132,Ignore
+Spending,Mandatory**,2007,11.4,1627.914,Ignore
+Spending,Mandatory**,2008,12.1,1780.325,Ignore
+Spending,Mandatory**,2009,15.9,2287.815,Ignore
+Spending,Mandatory**,2010,14.3,2110.193,Ignore
+Spending,Mandatory**,2011,14.5,2234.845,Ignore
+Spending,Mandatory**,2012,14.1,2258.715,Ignore
+Spending,Mandatory**,2013,14.1,2336.31,Ignore
+Spending,Mandatory**,2014,13.8,2375.798,Ignore
+Spending,Mandatory**,2015,14.2,2554.911,Ignore
+Spending,Mandatory**,2016,14.4,2664.911,Ignore
+Spending,Mandatory**,2017,14.5,2771.806,Ignore
+Spending,Net Interest,1968,1.2,11.09,Spending
+Spending,Net Interest,1969,1.3,12.699,Spending
+Spending,Net Interest,1970,1.4,14.38,Spending
+Spending,Net Interest,1971,1.3,14.841,Spending
+Spending,Net Interest,1972,1.3,15.478,Spending
+Spending,Net Interest,1973,1.3,17.349,Spending
+Spending,Net Interest,1974,1.4,21.449,Spending
+Spending,Net Interest,1975,1.4,23.244,Spending
+Spending,Net Interest,1976,1.5,26.727,Spending
+Spending,Net Interest,1977,1.5,29.901,Spending
+Spending,Net Interest,1978,1.6,35.458,Spending
+Spending,Net Interest,1979,1.7,42.633,Spending
+Spending,Net Interest,1980,1.9,52.533,Spending
+Spending,Net Interest,1981,2.2,68.766,Spending
+Spending,Net Interest,1982,2.6,85.032,Spending
+Spending,Net Interest,1983,2.5,89.808,Spending
+Spending,Net Interest,1984,2.8,111.102,Spending
+Spending,Net Interest,1985,3,129.478,Spending
+Spending,Net Interest,1986,3,136.017,Spending
+Spending,Net Interest,1987,2.9,138.611,Spending
+Spending,Net Interest,1988,2.9,151.803,Spending
+Spending,Net Interest,1989,3,168.981,Spending
+Spending,Net Interest,1990,3.1,184.347,Spending
+Spending,Net Interest,1991,3.2,194.448,Spending
+Spending,Net Interest,1992,3.1,199.344,Spending
+Spending,Net Interest,1993,2.9,198.713,Spending
+Spending,Net Interest,1994,2.8,202.932,Spending
+Spending,Net Interest,1995,3.1,232.134,Spending
+Spending,Net Interest,1996,3,241.053,Spending
+Spending,Net Interest,1997,2.9,243.984,Spending
+Spending,Net Interest,1998,2.7,241.118,Spending
+Spending,Net Interest,1999,2.4,229.755,Spending
+Spending,Net Interest,2000,2.2,222.949,Spending
+Spending,Net Interest,2001,2,206.167,Spending
+Spending,Net Interest,2002,1.6,170.949,Spending
+Spending,Net Interest,2003,1.4,153.073,Spending
+Spending,Net Interest,2004,1.3,160.245,Spending
+Spending,Net Interest,2005,1.4,183.986,Spending
+Spending,Net Interest,2006,1.7,226.603,Spending
+Spending,Net Interest,2007,1.7,237.109,Spending
+Spending,Net Interest,2008,1.7,252.757,Spending
+Spending,Net Interest,2009,1.3,186.902,Spending
+Spending,Net Interest,2010,1.3,196.194,Spending
+Spending,Net Interest,2011,1.5,229.962,Spending
+Spending,Net Interest,2012,1.4,220.408,Spending
+Spending,Net Interest,2013,1.3,220.885,Spending
+Spending,Net Interest,2014,1.3,228.956,Spending
+Spending,Net Interest,2015,1.2,223.181,Spending
+Spending,Net Interest,2016,1.3,240.033,Spending
+Spending,Net Interest,2017,1.4,262.551,Spending
