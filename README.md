@@ -16,7 +16,7 @@ I always felt sankeys were underutilized as a tool to communicate fiscal policy.
 
 ### Sankey Transition: onchange vs end
 
-The sankey animation was a nice lesson in onchange vs end. I only want to bind new data when the user made a choice by releasing the mouse button, which is the end event.
+The sankey animation was a nice lesson in onchange vs end. I only want to bind new data when the user makes a choice by releasing the mouse button, which is the end event.
 
 ```javascript
 const slider = d3Slider.sliderHorizontal()
