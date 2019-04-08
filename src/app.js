@@ -20,16 +20,14 @@ import {
 document.addEventListener('DOMContentLoaded', () => {
   drawDashboard()
 
-  window.addEventListener('resize', drawDashboard)
+  // WIP: NOT REMOVING CONSISTENTLY
+  // window.addEventListener('resize', drawDashboard)
 })
 
 const drawDashboard = () => {
   d3.select('#visualization-container')
     .selectAll('svg')
     .remove()
-  // d3.csv('../../data/us-budget-sankey-main.csv').then(csv => { // main
-  //   d3.csv('../../data/us-budget-sankey-deficit.csv').then(deficit => { // deficit
-  //     d3.csv('../../data/us-budget-sankey-bars.csv').then(barData => { // bars
 
   // absolute path for github pages
   d3.csv('data/us-budget-sankey-main.csv').then(csv => { // main

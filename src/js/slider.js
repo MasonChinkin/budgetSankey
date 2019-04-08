@@ -25,8 +25,6 @@ export function drawSlider() {
     .default(2017)
     .on('end', thisYear => { //use end instead of onchange, is when user releases mouse
       window.thisYear = thisYear
-      // d3.csv('../../data/us-budget-sankey-main.csv').then(csv => {
-      //   d3.csv('../../data/us-budget-sankey-deficit.csv').then(deficit => {
       d3.csv('data/us-budget-sankey-main.csv').then(csv => {
         d3.csv('data/us-budget-sankey-deficit.csv').then(deficit => {
 

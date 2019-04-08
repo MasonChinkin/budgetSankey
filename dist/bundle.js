@@ -29691,36 +29691,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  drawDashboard(); // WIP: NOT REMOVING CONSISTENTLY
+  // window.addEventListener('resize', drawDashboard)
+});
 
-document.addEventListener('DOMContentLoaded', () => {
-  drawDashboard()
+var drawDashboard = function drawDashboard() {
+  d3__WEBPACK_IMPORTED_MODULE_1__["select"]('#visualization-container').selectAll('svg').remove(); // absolute path for github pages
 
-  window.addEventListener('resize', drawDashboard)
-})
-
-const drawDashboard = () => {
-  d3__WEBPACK_IMPORTED_MODULE_1__["select"]('#visualization-container')
-    .selectAll('svg')
-    .remove()
-  // d3.csv('../../data/us-budget-sankey-main.csv').then(csv => { // main
-  //   d3.csv('../../data/us-budget-sankey-deficit.csv').then(deficit => { // deficit
-  //     d3.csv('../../data/us-budget-sankey-bars.csv').then(barData => { // bars
-
-  // absolute path for github pages
-  d3__WEBPACK_IMPORTED_MODULE_1__["csv"]('data/us-budget-sankey-main.csv').then(csv => { // main
-    d3__WEBPACK_IMPORTED_MODULE_1__["csv"]('data/us-budget-sankey-deficit.csv').then(deficit => { // deficit
-      d3__WEBPACK_IMPORTED_MODULE_1__["csv"]('data/us-budget-sankey-bars.csv').then(barData => { // bars
-
-        Object(_js_utils__WEBPACK_IMPORTED_MODULE_2__["newData"])(csv, deficit, thisYear)
-        Object(_js_bars__WEBPACK_IMPORTED_MODULE_3__["drawBars"])(barData)
-        Object(_js_sankey__WEBPACK_IMPORTED_MODULE_6__["drawSankey"])()
-        Object(_js_sankey__WEBPACK_IMPORTED_MODULE_6__["drawDeficit"])()
-        Object(_js_slider__WEBPACK_IMPORTED_MODULE_4__["drawSlider"])()
-        Object(_js_lines__WEBPACK_IMPORTED_MODULE_5__["drawLines"])()
-      })
-    })
-  })
-}
+  d3__WEBPACK_IMPORTED_MODULE_1__["csv"]('data/us-budget-sankey-main.csv').then(function (csv) {
+    // main
+    d3__WEBPACK_IMPORTED_MODULE_1__["csv"]('data/us-budget-sankey-deficit.csv').then(function (deficit) {
+      // deficit
+      d3__WEBPACK_IMPORTED_MODULE_1__["csv"]('data/us-budget-sankey-bars.csv').then(function (barData) {
+        // bars
+        Object(_js_utils__WEBPACK_IMPORTED_MODULE_2__["newData"])(csv, deficit, thisYear);
+        Object(_js_bars__WEBPACK_IMPORTED_MODULE_3__["drawBars"])(barData);
+        Object(_js_sankey__WEBPACK_IMPORTED_MODULE_6__["drawSankey"])();
+        Object(_js_sankey__WEBPACK_IMPORTED_MODULE_6__["drawDeficit"])();
+        Object(_js_slider__WEBPACK_IMPORTED_MODULE_4__["drawSlider"])();
+        Object(_js_lines__WEBPACK_IMPORTED_MODULE_5__["drawLines"])();
+      });
+    });
+  });
+};
 
 /***/ }),
 
@@ -29761,11 +29755,15 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 // https://github.com/johnwalley/d3-simple-slider Version 0.2.1. Copyright 2018 John Walley.
 (function (global, factory) {
-   true ? factory(exports, __webpack_require__(/*! d3-array */ "./node_modules/d3-array/src/index.js"), __webpack_require__(/*! d3-axis */ "./node_modules/d3-axis/src/index.js"), __webpack_require__(/*! d3-dispatch */ "./node_modules/d3-dispatch/src/index.js"), __webpack_require__(/*! d3-drag */ "./node_modules/d3-drag/src/index.js"), __webpack_require__(/*! d3-ease */ "./node_modules/d3-ease/src/index.js"), __webpack_require__(/*! d3-scale */ "./node_modules/d3-scale/src/index.js"), __webpack_require__(/*! d3-selection */ "./node_modules/d3-selection/src/index.js")) :
-    undefined;
-}(this, (function (exports, d3Array, d3Axis, d3Dispatch, d3Drag, d3Ease, d3Scale, d3Selection) {
+  ( false ? undefined : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? factory(exports, __webpack_require__(/*! d3-array */ "./node_modules/d3-array/src/index.js"), __webpack_require__(/*! d3-axis */ "./node_modules/d3-axis/src/index.js"), __webpack_require__(/*! d3-dispatch */ "./node_modules/d3-dispatch/src/index.js"), __webpack_require__(/*! d3-drag */ "./node_modules/d3-drag/src/index.js"), __webpack_require__(/*! d3-ease */ "./node_modules/d3-ease/src/index.js"), __webpack_require__(/*! d3-scale */ "./node_modules/d3-scale/src/index.js"), __webpack_require__(/*! d3-selection */ "./node_modules/d3-selection/src/index.js")) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports, __webpack_require__(/*! d3-array */ "./node_modules/d3-array/src/index.js"), __webpack_require__(/*! d3-axis */ "./node_modules/d3-axis/src/index.js"), __webpack_require__(/*! d3-dispatch */ "./node_modules/d3-dispatch/src/index.js"), __webpack_require__(/*! d3-drag */ "./node_modules/d3-drag/src/index.js"), __webpack_require__(/*! d3-ease */ "./node_modules/d3-ease/src/index.js"), __webpack_require__(/*! d3-scale */ "./node_modules/d3-scale/src/index.js"), __webpack_require__(/*! d3-selection */ "./node_modules/d3-selection/src/index.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : undefined;
+})(this, function (exports, d3Array, d3Axis, d3Dispatch, d3Drag, d3Ease, d3Scale, d3Selection) {
   'use strict';
 
   var UPDATE_DURATION = 200;
@@ -29782,142 +29780,49 @@ if(false) {}
     var marks = null;
     var tickFormat = null;
     var ticks = null;
-
     var listeners = d3Dispatch.dispatch("onchange", "start", "end", "drag");
-
     var selection = null;
     var scale = null;
     var identityClamped = null;
 
     function slider(context) {
       selection = context.selection ? context.selection() : context;
-
       scale = domain[0] instanceof Date ? d3Scale.scaleTime() : d3Scale.scaleLinear();
+      scale = scale.domain(domain).range([0, width]).clamp(true);
+      identityClamped = d3Scale.scaleLinear().range(scale.range()).domain(scale.range()).clamp(true); // Ensure value is valid
 
-      scale = scale
-        .domain(domain)
-        .range([0, width])
-        .clamp(true);
-
-      identityClamped = d3Scale.scaleLinear()
-        .range(scale.range())
-        .domain(scale.range())
-        .clamp(true);
-
-      // Ensure value is valid
-      value = d3Scale.scaleLinear()
-        .range(domain)
-        .domain(domain)
-        .clamp(true)(value);
-
+      value = d3Scale.scaleLinear().range(domain).domain(domain).clamp(true)(value);
       tickFormat = tickFormat || scale.tickFormat();
-
       var axis = selection.selectAll(".axis").data([null]);
-
-      axis.enter()
-        .append("g")
-        .attr("transform", "translate(0,7)")
-        .attr("class", "axis");
-
+      axis.enter().append("g").attr("transform", "translate(0,7)").attr("class", "axis");
       var slider = selection.selectAll(".slider").data([null]);
-
-      var sliderEnter = slider
-        .enter()
-        .append("g")
-        .attr("class", "slider")
-        .attr("cursor", "ew-resize")
-        .attr("transform", "translate(0,0)")
-        .call(d3Drag.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended)
-        );
-
-      sliderEnter.append("line")
-        .attr("class", "track")
-        .attr("x1", 0)
-        .attr("y1", 0)
-        .attr("y2", 0)
-        .attr("stroke", "#bbb")
-        .attr("stroke-width", 6)
-        .attr("stroke-linecap", "round");
-
-      sliderEnter.append("line")
-        .attr("class", "track-inset")
-        .attr("x1", 0)
-        .attr("y1", 0)
-        .attr("y2", 0)
-        .attr("stroke", "#eee")
-        .attr("stroke-width", 4)
-        .attr("stroke-linecap", "round");
-
-      sliderEnter.append("line")
-        .attr("class", "track-overlay")
-        .attr("x1", 0)
-        .attr("y1", 0)
-        .attr("y2", 0)
-        .attr("stroke", "transparent")
-        .attr("stroke-width", 40)
-        .attr("stroke-linecap", "round")
-        .merge(slider.select(".track-overlay"));
-
-      var handleEnter = sliderEnter
-        .append("g")
-        .attr("class", "parameter-value")
-        .attr("transform", "translate(" + scale(value) + ",0)")
-        .attr("font-family", "sans-serif")
-        .attr("text-anchor", "middle");
-
-      handleEnter
-        .append("path")
-        .attr("d", handle)
-        .attr("fill", "white")
-        .attr("stroke", "#777");
+      var sliderEnter = slider.enter().append("g").attr("class", "slider").attr("cursor", "ew-resize").attr("transform", "translate(0,0)").call(d3Drag.drag().on("start", dragstarted).on("drag", dragged).on("end", dragended));
+      sliderEnter.append("line").attr("class", "track").attr("x1", 0).attr("y1", 0).attr("y2", 0).attr("stroke", "#bbb").attr("stroke-width", 6).attr("stroke-linecap", "round");
+      sliderEnter.append("line").attr("class", "track-inset").attr("x1", 0).attr("y1", 0).attr("y2", 0).attr("stroke", "#eee").attr("stroke-width", 4).attr("stroke-linecap", "round");
+      sliderEnter.append("line").attr("class", "track-overlay").attr("x1", 0).attr("y1", 0).attr("y2", 0).attr("stroke", "transparent").attr("stroke-width", 40).attr("stroke-linecap", "round").merge(slider.select(".track-overlay"));
+      var handleEnter = sliderEnter.append("g").attr("class", "parameter-value").attr("transform", "translate(" + scale(value) + ",0)").attr("font-family", "sans-serif").attr("text-anchor", "middle");
+      handleEnter.append("path").attr("d", handle).attr("fill", "white").attr("stroke", "#777");
 
       if (displayValue) {
-        handleEnter.append("text")
-          .attr("font-size", 30)
-          .attr("y", 27)
-          .attr("dy", ".71em")
-          .text(tickFormat(value));
+        handleEnter.append("text").attr("font-size", 30).attr("y", 27).attr("dy", ".71em").text(tickFormat(value));
       }
 
       context.select(".track").attr("x2", scale.range()[1]);
       context.select(".track-inset").attr("x2", scale.range()[1]);
       context.select(".track-overlay").attr("x2", scale.range()[1]);
+      context.select(".axis").call(d3Axis.axisBottom(scale).tickFormat(tickFormat).ticks(ticks).tickValues(tickValues)); // https://bl.ocks.org/mbostock/4323929
 
-      context.select(".axis").call(
-        d3Axis.axisBottom(scale)
-        .tickFormat(tickFormat)
-        .ticks(ticks)
-        .tickValues(tickValues)
-      );
-
-      // https://bl.ocks.org/mbostock/4323929
-      selection.select(".axis")
-        .select(".domain")
-        .remove();
-
+      selection.select(".axis").select(".domain").remove();
       context.select(".axis").attr("transform", "translate(0,7)");
-
-      context.selectAll(".axis text")
-        .attr("fill", "#aaa")
-        .attr("y", 20)
-        .attr("dy", ".71em")
-        .attr("text-anchor", "middle");
-
+      context.selectAll(".axis text").attr("fill", "#aaa").attr("y", 20).attr("dy", ".71em").attr("text-anchor", "middle");
       context.selectAll(".axis line").attr("stroke", "#aaa");
-
-      context.select(".parameter-value")
-        .attr("transform", "translate(" + scale(value) + ",0)");
-
+      context.select(".parameter-value").attr("transform", "translate(" + scale(value) + ",0)");
       fadeTickText();
 
       function dragstarted() {
         d3Selection.select(this).classed("active", true);
         var pos = identityClamped(d3Selection.event.x);
         var newValue = alignedValue(scale.invert(pos));
-
         updateHandle(newValue);
         listeners.call("start", slider, newValue);
         updateValue(newValue);
@@ -29926,7 +29831,6 @@ if(false) {}
       function dragged() {
         var pos = identityClamped(d3Selection.event.x);
         var newValue = alignedValue(scale.invert(pos));
-
         updateHandle(newValue);
         listeners.call("drag", slider, newValue);
         updateValue(newValue);
@@ -29936,7 +29840,6 @@ if(false) {}
         d3Selection.select(this).classed("active", false);
         var pos = identityClamped(d3Selection.event.x);
         var newValue = alignedValue(scale.invert(pos));
-
         updateHandle(newValue);
         listeners.call("end", slider, newValue);
         updateValue(newValue);
@@ -29946,13 +29849,10 @@ if(false) {}
     function fadeTickText() {
       if (displayValue) {
         var distances = [];
-
         selection.selectAll(".axis .tick").each(function (d) {
           distances.push(Math.abs(d - value));
         });
-
         var index = d3Array.scan(distances);
-
         selection.selectAll(".axis .tick text").attr("opacity", function (d, i) {
           return i === index ? 0 : 1;
         });
@@ -29972,12 +29872,9 @@ if(false) {}
       }
 
       if (marks) {
-        var index = d3Array.scan(
-          marks.map(function (d) {
-            return Math.abs(newValue - d);
-          })
-        );
-
+        var index = d3Array.scan(marks.map(function (d) {
+          return Math.abs(newValue - d);
+        }));
         return marks[index];
       }
 
@@ -29994,14 +29891,10 @@ if(false) {}
 
     function updateHandle(newValue, animate) {
       animate = typeof animate !== "undefined" ? animate : false;
-
       var handleSelection = selection.select(".parameter-value");
 
       if (animate) {
-        handleSelection = handleSelection
-          .transition()
-          .ease(d3Ease.easeQuadOut)
-          .duration(UPDATE_DURATION);
+        handleSelection = handleSelection.transition().ease(d3Ease.easeQuadOut).duration(UPDATE_DURATION);
       }
 
       handleSelection.attr("transform", "translate(" + scale(newValue) + ",0)");
@@ -30051,14 +29944,12 @@ if(false) {}
       if (!arguments.length) return value;
       var pos = identityClamped(scale(_));
       var newValue = alignedValue(scale.invert(pos));
-
       updateHandle(newValue, true);
       updateValue(newValue);
-
       return slider;
     };
 
-    slider.default = function (_) {
+    slider["default"] = function (_) {
       if (!arguments.length) return defaultValue;
       defaultValue = _;
       value = _;
@@ -30108,12 +29999,10 @@ if(false) {}
   }
 
   exports.sliderHorizontal = sliderHorizontal;
-
   Object.defineProperty(exports, '__esModule', {
     value: true
   });
-
-})));
+});
 
 /***/ }),
 
@@ -30129,14 +30018,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d3sankey", function() { return d3sankey; });
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
 
-
 function d3sankey() {
   var sankey = {},
-    nodeWidth = 24,
-    nodePadding = 8,
-    size = [1, 1],
-    nodes = [],
-    links = [];
+      nodeWidth = 24,
+      nodePadding = 8,
+      size = [1, 1],
+      nodes = [],
+      links = [];
 
   sankey.nodeWidth = function (_) {
     if (!arguments.length) return nodeWidth;
@@ -30187,16 +30075,13 @@ function d3sankey() {
 
     function link(d) {
       var x0 = d.source.x + d.source.dx,
-        x1 = d.target.x,
-        xi = d3__WEBPACK_IMPORTED_MODULE_0__["interpolateNumber"](x0, x1),
-        x2 = xi(curvature),
-        x3 = xi(1 - curvature),
-        y0 = d.source.y + d.sy + d.dy / 2,
-        y1 = d.target.y + d.ty + d.dy / 2;
-      return "M" + x0 + "," + y0 +
-        "C" + x2 + "," + y0 +
-        " " + x3 + "," + y1 +
-        " " + x1 + "," + y1;
+          x1 = d.target.x,
+          xi = d3__WEBPACK_IMPORTED_MODULE_0__["interpolateNumber"](x0, x1),
+          x2 = xi(curvature),
+          x3 = xi(1 - curvature),
+          y0 = d.source.y + d.sy + d.dy / 2,
+          y1 = d.target.y + d.ty + d.dy / 2;
+      return "M" + x0 + "," + y0 + "C" + x2 + "," + y0 + " " + x3 + "," + y1 + " " + x1 + "," + y1;
     }
 
     link.curvature = function (_) {
@@ -30206,10 +30091,10 @@ function d3sankey() {
     };
 
     return link;
-  };
-
-  // Populate the sourceLinks and targetLinks for each node.
+  }; // Populate the sourceLinks and targetLinks for each node.
   // Also, if the source and target are not objects, assume they are indices.
+
+
   function computeNodeLinks() {
     nodes.forEach(function (node) {
       node.sourceLinks = [];
@@ -30217,32 +30102,29 @@ function d3sankey() {
     });
     links.forEach(function (link) {
       var source = link.source,
-        target = link.target;
+          target = link.target;
       if (typeof source === "number") source = link.source = nodes[link.source];
       if (typeof target === "number") target = link.target = nodes[link.target];
       source.sourceLinks.push(link);
       target.targetLinks.push(link);
     });
-  }
+  } // Compute the value (size) of each node by summing the associated links.
 
-  // Compute the value (size) of each node by summing the associated links.
+
   function computeNodeValues() {
     nodes.forEach(function (node) {
-      node.value = Math.max(
-        d3__WEBPACK_IMPORTED_MODULE_0__["sum"](node.sourceLinks, value),
-        d3__WEBPACK_IMPORTED_MODULE_0__["sum"](node.targetLinks, value)
-      );
+      node.value = Math.max(d3__WEBPACK_IMPORTED_MODULE_0__["sum"](node.sourceLinks, value), d3__WEBPACK_IMPORTED_MODULE_0__["sum"](node.targetLinks, value));
     });
-  }
-
-  // Iteratively assign the breadth (x-position) for each node.
+  } // Iteratively assign the breadth (x-position) for each node.
   // Nodes are assigned the maximum breadth of incoming neighbors plus one;
   // nodes with no incoming links are assigned breadth zero, while
   // nodes with no outgoing links are assigned the maximum breadth.
+
+
   function computeNodeBreadths() {
     var remainingNodes = nodes,
-      nextNodes,
-      x = 0;
+        nextNodes,
+        x = 0;
 
     while (remainingNodes.length) {
       nextNodes = [];
@@ -30257,9 +30139,9 @@ function d3sankey() {
       });
       remainingNodes = nextNodes;
       ++x;
-    }
+    } //
 
-    //
+
     moveSinksRight(x);
     scaleNodeBreadths((size[0] - nodeWidth) / (x - 1));
   }
@@ -30289,19 +30171,15 @@ function d3sankey() {
   }
 
   function computeNodeDepths(iterations) {
-    var nodesByBreadth = d3__WEBPACK_IMPORTED_MODULE_0__["nest"]()
-      .key(function (d) {
-        return d.x;
-      })
-      .sortKeys(d3__WEBPACK_IMPORTED_MODULE_0__["ascending"])
-      .entries(nodes)
-      .map(function (d) {
-        return d.values;
-      });
+    var nodesByBreadth = d3__WEBPACK_IMPORTED_MODULE_0__["nest"]().key(function (d) {
+      return d.x;
+    }).sortKeys(d3__WEBPACK_IMPORTED_MODULE_0__["ascending"]).entries(nodes).map(function (d) {
+      return d.values;
+    }); //
 
-    //
     initializeNodeDepth();
     resolveCollisions();
+
     for (var alpha = 1; iterations > 0; --iterations) {
       relaxRightToLeft(alpha *= .99);
       resolveCollisions();
@@ -30313,14 +30191,12 @@ function d3sankey() {
       var ky = d3__WEBPACK_IMPORTED_MODULE_0__["min"](nodesByBreadth, function (nodes) {
         return (size[1] - (nodes.length - 1) * nodePadding) / d3__WEBPACK_IMPORTED_MODULE_0__["sum"](nodes, value);
       });
-
       nodesByBreadth.forEach(function (nodes) {
         nodes.forEach(function (node, i) {
           node.y = i;
           node.dy = node.value * ky;
         });
       });
-
       links.forEach(function (link) {
         link.dy = link.value * ky;
       });
@@ -30359,26 +30235,26 @@ function d3sankey() {
     function resolveCollisions() {
       nodesByBreadth.forEach(function (nodes) {
         var node,
-          dy,
-          y0 = 0,
-          n = nodes.length,
-          i;
+            dy,
+            y0 = 0,
+            n = nodes.length,
+            i; // Push any overlapping nodes down.
 
-        // Push any overlapping nodes down.
         nodes.sort(ascendingDepth);
+
         for (i = 0; i < n; ++i) {
           node = nodes[i];
           dy = y0 - node.y;
           if (dy > 0) node.y += dy;
           y0 = node.y + node.dy + nodePadding;
-        }
+        } // If the bottommost node goes outside the bounds, push it back up.
 
-        // If the bottommost node goes outside the bounds, push it back up.
+
         dy = y0 - nodePadding - size[1];
-        if (dy > 0) {
-          y0 = node.y -= dy;
 
-          // Push any overlapping nodes back up.
+        if (dy > 0) {
+          y0 = node.y -= dy; // Push any overlapping nodes back up.
+
           for (i = n - 2; i >= 0; --i) {
             node = nodes[i];
             dy = node.y + node.dy + nodePadding - y0;
@@ -30401,7 +30277,7 @@ function d3sankey() {
     });
     nodes.forEach(function (node) {
       var sy = 0,
-        ty = 0;
+          ty = 0;
       node.sourceLinks.forEach(function (link) {
         link.sy = sy;
         sy += link.dy;
@@ -30430,7 +30306,8 @@ function d3sankey() {
   }
 
   return sankey;
-};
+}
+;
 
 /***/ }),
 
@@ -30449,111 +30326,77 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./src/js/utils.js");
 
 
-
 function drawBars(barData) {
   // set the dimensions and margins of the graph
-  let barsMargin = {
+  var barsMargin = {
     top: 10,
     right: 5,
     bottom: 5,
     left: 5
-  }
+  };
+  var barsWidth = barsContainer.offsetWidth - barsMargin.left - barsMargin.right;
+  var barsHeight = 80 - barsMargin.top - barsMargin.bottom; // append the svg object to the body of the page
 
-  let barsWidth = barsContainer.offsetWidth - barsMargin.left - barsMargin.right
-  let barsHeight = 80 - barsMargin.top - barsMargin.bottom
+  var barsSvg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('#barsContainer').append('svg').attr('width', barsWidth + barsMargin.left + barsMargin.right).attr('height', barsHeight + barsMargin.top + barsMargin.bottom).attr('class', 'barsCanvas').append('g').attr('transform', 'translate(' + barsMargin.left + ',' + barsMargin.top + ')');
+  barData.forEach(function (d) {
+    return d.year = +d.year;
+  });
+  var stack = d3__WEBPACK_IMPORTED_MODULE_0__["stack"]();
+  var keys = barData.columns.slice(2);
+  stack.keys(keys).offset(d3__WEBPACK_IMPORTED_MODULE_0__["stackOffsetDiverging"]); //data, stacked
 
-  // append the svg object to the body of the page
-  let barsSvg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('#barsContainer').append('svg')
-    .attr('width', barsWidth + barsMargin.left + barsMargin.right)
-    .attr('height', barsHeight + barsMargin.top + barsMargin.bottom)
-    .attr('class', 'barsCanvas')
-    .append('g')
-    .attr('transform', 'translate(' + barsMargin.left + ',' + barsMargin.top + ')')
+  var series = stack(barData); //scales
 
-  barData.forEach(d => d.year = +d.year)
+  var barsXScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleBand"]().domain(barData.map(function (d) {
+    return d.year;
+  })).range([barsMargin.left, barsWidth - barsMargin.right]).paddingInner(0.1).paddingOuter(0.75);
+  var barsYScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"]().domain([d3__WEBPACK_IMPORTED_MODULE_0__["min"](series, _utils__WEBPACK_IMPORTED_MODULE_1__["stackMin"]), d3__WEBPACK_IMPORTED_MODULE_0__["max"](series, _utils__WEBPACK_IMPORTED_MODULE_1__["stackMax"])]).range([barsHeight - barsMargin.bottom, barsMargin.top]).nice(); //group data rows
 
-  const stack = d3__WEBPACK_IMPORTED_MODULE_0__["stack"]()
-  const keys = barData.columns.slice(2)
-  stack.keys(keys)
-    .offset(d3__WEBPACK_IMPORTED_MODULE_0__["stackOffsetDiverging"])
+  var bars = barsSvg.selectAll('#bars').data(series).enter().append('g').attr('id', 'bars').attr('class', function (d, i) {
+    return d.key;
+  }); //add rect for each data value
 
-  //data, stacked
-  let series = stack(barData)
-
-  //scales
-  let barsXScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleBand"]()
-    .domain(barData.map(d => d.year))
-    .range([barsMargin.left, barsWidth - barsMargin.right])
-    .paddingInner(0.1)
-    .paddingOuter(0.75)
-
-  let barsYScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"]()
-    .domain([d3__WEBPACK_IMPORTED_MODULE_0__["min"](series, _utils__WEBPACK_IMPORTED_MODULE_1__["stackMin"]), d3__WEBPACK_IMPORTED_MODULE_0__["max"](series, _utils__WEBPACK_IMPORTED_MODULE_1__["stackMax"])])
-    .range([barsHeight - barsMargin.bottom, barsMargin.top])
-    .nice()
-
-  //group data rows
-  const bars = barsSvg.selectAll('#bars')
-    .data(series)
-    .enter()
-    .append('g')
-    .attr('id', 'bars')
-    .attr('class', (d, i) => d.key)
-
-  //add rect for each data value
-  window.rects = bars.selectAll('rect')
-    .data(d => d)
-    .enter()
-    .append('rect')
-    .attr('x', (d, i) => barsXScale(d.data.year))
-    .attr('y', d => barsYScale(d[1]))
-    .attr('height', d => barsYScale(d[0]) - barsYScale(d[1]))
-    .attr('class', 'bar')
-    .attr('year', d => d.data.year)
-    .attr('width', barsXScale.bandwidth)
-    .style('fill', function (d) {
-      return (d3__WEBPACK_IMPORTED_MODULE_0__["select"](this.parentNode).attr('class') === 'Revenue') ? 'green' : 'red'
-    })
-    .style('opacity', d => (d.data.year === thisYear) ? 0.8 : 0.6)
-    .style('stroke', d => (d.data.year === thisYear) ? 'black' : 'none')
-    .style('stroke-width', d => (d.data.year === thisYear) ? '2px' : 'none')
-
-  //net line//
+  window.rects = bars.selectAll('rect').data(function (d) {
+    return d;
+  }).enter().append('rect').attr('x', function (d, i) {
+    return barsXScale(d.data.year);
+  }).attr('y', function (d) {
+    return barsYScale(d[1]);
+  }).attr('height', function (d) {
+    return barsYScale(d[0]) - barsYScale(d[1]);
+  }).attr('class', 'bar').attr('year', function (d) {
+    return d.data.year;
+  }).attr('width', barsXScale.bandwidth).style('fill', function (d) {
+    return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this.parentNode).attr('class') === 'Revenue' ? 'green' : 'red';
+  }).style('opacity', function (d) {
+    return d.data.year === thisYear ? 0.8 : 0.6;
+  }).style('stroke', function (d) {
+    return d.data.year === thisYear ? 'black' : 'none';
+  }).style('stroke-width', function (d) {
+    return d.data.year === thisYear ? '2px' : 'none';
+  }); //net line//
   //define line
-  let line = d3__WEBPACK_IMPORTED_MODULE_0__["line"]()
-    .x(d => barsXScale(d.year) + (barsXScale.bandwidth() / 2))
-    .y(d => barsYScale(d.Balance))
 
-  //create line
-  barsSvg.append('path')
-    .datum(barData)
-    .attr('id', 'line')
-    .attr('d', line)
+  var line = d3__WEBPACK_IMPORTED_MODULE_0__["line"]().x(function (d) {
+    return barsXScale(d.year) + barsXScale.bandwidth() / 2;
+  }).y(function (d) {
+    return barsYScale(d.Balance);
+  }); //create line
 
-  //labels
-  barsSvg.append('text')
-    .attr('x', barsWidth / 2)
-    .attr('y', barsMargin.top * .5)
-    .attr('dy', '0em')
-    .text('Revenue/Surplus')
-    .attr('class', 'bar-labels')
+  barsSvg.append('path').datum(barData).attr('id', 'line').attr('d', line); //labels
 
-  barsSvg.append('text')
-    .attr('x', barsWidth / 2)
-    .attr('y', barsHeight + barsMargin.bottom * .5)
-    .attr('dy', '0em')
-    .attr('class', 'bar-labels')
-    .text('Spending/Deficit')
+  barsSvg.append('text').attr('x', barsWidth / 2).attr('y', barsMargin.top * .5).attr('dy', '0em').text('Revenue/Surplus').attr('class', 'bar-labels');
+  barsSvg.append('text').attr('x', barsWidth / 2).attr('y', barsHeight + barsMargin.bottom * .5).attr('dy', '0em').attr('class', 'bar-labels').text('Spending/Deficit');
 }
-
 function updateBars(thisYear) {
-  const transition = 50
-
-  rects.transition()
-    .duration(transition)
-    .style('opacity', d => (d.data.year === thisYear) ? 0.8 : 0.6)
-    .style('stroke', d => (d.data.year === thisYear) ? 'black' : 'none')
-    .style('stroke-width', d => (d.data.year === thisYear) ? '2px' : 'none')
+  var transition = 50;
+  rects.transition().duration(transition).style('opacity', function (d) {
+    return d.data.year === thisYear ? 0.8 : 0.6;
+  }).style('stroke', function (d) {
+    return d.data.year === thisYear ? 'black' : 'none';
+  }).style('stroke-width', function (d) {
+    return d.data.year === thisYear ? '2px' : 'none';
+  });
 }
 
 /***/ }),
@@ -30573,196 +30416,130 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./src/js/utils.js");
 
 
-
 function drawLines() {
   //seperate datasets filtered by type
-  const revLineData = lineData.filter(d => d.type == 'Revenue')
-  const spendLineData = lineData.filter(d => d.type == 'Spending')
+  var revLineData = lineData.filter(function (d) {
+    return d.type == 'Revenue';
+  });
+  var spendLineData = lineData.filter(function (d) {
+    return d.type == 'Spending';
+  });
+  var revDataNested = d3__WEBPACK_IMPORTED_MODULE_0__["nest"]().key(function (d) {
+    return d.source;
+  }).entries(revLineData);
+  var spendDataNested = d3__WEBPACK_IMPORTED_MODULE_0__["nest"]().key(function (d) {
+    return d.target;
+  }).entries(spendLineData); //Dimensions
 
-  const revDataNested = d3__WEBPACK_IMPORTED_MODULE_0__["nest"]()
-    .key(d => d.source)
-    .entries(revLineData)
-
-  const spendDataNested = d3__WEBPACK_IMPORTED_MODULE_0__["nest"]()
-    .key(d => d.target)
-    .entries(spendLineData)
-
-  //Dimensions
   window.lineMargin = {
     top: 20,
     right: 20,
     bottom: 10,
     left: 20,
     middle: 20
-  }
+  };
+  window.lineWidth = linesContainer.offsetWidth - lineMargin.left - lineMargin.right;
+  window.lineHeight = 140 - lineMargin.top - lineMargin.bottom;
+  window.lineSvg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('#linesContainer').append('svg').attr('width', lineWidth + lineMargin.left + lineMargin.right).attr('height', lineHeight + lineMargin.top + lineMargin.bottom).append('g').attr('transform', 'translate(' + lineMargin.left + ',' + lineMargin.top + ')'); // set the domain and range
 
-  window.lineWidth = linesContainer.offsetWidth - lineMargin.left - lineMargin.right
-  window.lineHeight = 140 - lineMargin.top - lineMargin.bottom
+  window.revLineX = d3__WEBPACK_IMPORTED_MODULE_0__["scaleBand"]().domain(revLineData.map(function (d) {
+    return d.year;
+  })).range([lineMargin.left, lineWidth / 2 - lineMargin.middle]);
+  window.spendLineX = d3__WEBPACK_IMPORTED_MODULE_0__["scaleBand"]().domain(spendLineData.map(function (d) {
+    return d.year;
+  })).range([lineWidth / 2 + lineMargin.middle, lineWidth - lineMargin.right]);
+  window.lineY = d3__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"]().domain([0, d3__WEBPACK_IMPORTED_MODULE_0__["max"](revLineData, function (d) {
+    return d.value;
+  })]).range([lineHeight - lineMargin.bottom, lineMargin.top]); // define the line
 
-  window.lineSvg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('#linesContainer').append('svg')
-    .attr('width', lineWidth + lineMargin.left + lineMargin.right)
-    .attr('height', lineHeight + lineMargin.top + lineMargin.bottom)
-    .append('g')
-    .attr('transform', 'translate(' + lineMargin.left + ',' + lineMargin.top + ')')
+  var revLine = d3__WEBPACK_IMPORTED_MODULE_0__["line"]().x(function (d) {
+    return revLineX(d.year);
+  }).y(function (d) {
+    return lineY(d.value);
+  });
+  var spendLine = d3__WEBPACK_IMPORTED_MODULE_0__["line"]().x(function (d) {
+    return spendLineX(d.year);
+  }).y(function (d) {
+    return lineY(d.value);
+  }); // revenue lines
 
-  // set the domain and range
-  window.revLineX = d3__WEBPACK_IMPORTED_MODULE_0__["scaleBand"]()
-    .domain(revLineData.map(d => d.year))
-    .range([lineMargin.left, lineWidth / 2 - lineMargin.middle])
+  var revLines = lineSvg.selectAll('lineNode').data(revDataNested).enter().append('g').attr('class', 'lineNode').attr('key', function (d) {
+    return d.key.split(' ').join('_');
+  });
+  revLines.append('path').attr('class', function (d) {
+    return 'line ' + d.key;
+  }).attr('d', function (d) {
+    return revLine(d.values);
+  }).attr('key', function (d) {
+    return d.key.split(' ').join('_');
+  }).style('stroke', 'green').on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_1__["highlight"]); // revenue lines
 
-  window.spendLineX = d3__WEBPACK_IMPORTED_MODULE_0__["scaleBand"]()
-    .domain(spendLineData.map(d => d.year))
-    .range([lineWidth / 2 + lineMargin.middle, lineWidth - lineMargin.right])
+  var spendLines = lineSvg.selectAll('lineNode').data(spendDataNested).enter().append('g').attr('class', 'lineNode').attr('key', function (d) {
+    return d.key.split(' ').join('_');
+  });
+  spendLines.append('path').attr('class', function (d) {
+    return 'line ' + d.key;
+  }).attr('d', function (d) {
+    return spendLine(d.values);
+  }).attr('key', function (d) {
+    return d.key.split(' ').join('_');
+  }).style('stroke', 'red').on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_1__["highlight"]); //headers
 
-  window.lineY = d3__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"]()
-    .domain([0, d3__WEBPACK_IMPORTED_MODULE_0__["max"](revLineData, d => d.value)])
-    .range([lineHeight - lineMargin.bottom, lineMargin.top])
+  lineSvg.append('text').attr('x', lineWidth * .25).attr('y', lineMargin.top / 4).attr('class', 'lineTitle').text('Revenue');
+  lineSvg.append('text').attr('x', lineWidth * .75).attr('y', lineMargin.top / 4).attr('class', 'lineTitle').text('Spending'); //Define axes
 
-  // define the line
-  const revLine = d3__WEBPACK_IMPORTED_MODULE_0__["line"]()
-    .x(d => revLineX(d.year))
-    .y(d => lineY(d.value))
+  var revXAxis = d3__WEBPACK_IMPORTED_MODULE_0__["axisBottom"]().scale(revLineX).tickValues(revLineX.domain().filter(function (d, i) {
+    return i === 0 || i === 49;
+  })) //first and last year
+  .tickSize(0);
+  var spendXAxis = d3__WEBPACK_IMPORTED_MODULE_0__["axisBottom"]().scale(spendLineX).tickValues(revLineX.domain().filter(function (d, i) {
+    return i === 0 || i === 49;
+  })).tickSize(0); //create axes
 
-  const spendLine = d3__WEBPACK_IMPORTED_MODULE_0__["line"]()
-    .x(d => spendLineX(d.year))
-    .y(d => lineY(d.value))
+  lineSvg.append('g').attr('class', 'revAxis x').attr('transform', 'translate(-7,' + (lineHeight - lineMargin.bottom) + ')').call(revXAxis); //create axes
 
-  // revenue lines
-  const revLines = lineSvg.selectAll('lineNode')
-    .data(revDataNested)
-    .enter().append('g')
-    .attr('class', 'lineNode')
-    .attr('key', d => d.key.split(' ').join('_'))
+  lineSvg.append('g').attr('class', 'spendAxis x').attr('transform', 'translate(-7,' + (lineHeight - lineMargin.bottom) + ')').call(spendXAxis); //lines and labels indicating current year
 
-  revLines.append('path')
-    .attr('class', d => 'line ' + d.key)
-    .attr('d', d => revLine(d.values))
-    .attr('key', d => d.key.split(' ').join('_'))
-    .style('stroke', 'green')
-    .on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_1__["highlight"])
-
-  // revenue lines
-  const spendLines = lineSvg.selectAll('lineNode')
-    .data(spendDataNested)
-    .enter().append('g')
-    .attr('class', 'lineNode')
-    .attr('key', d => d.key.split(' ').join('_'))
-
-  spendLines.append('path')
-    .attr('class', d => 'line ' + d.key)
-    .attr('d', d => spendLine(d.values))
-    .attr('key', d => d.key.split(' ').join('_'))
-    .style('stroke', 'red')
-    .on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_1__["highlight"])
-
-  //headers
-  lineSvg.append('text')
-    .attr('x', lineWidth * .25)
-    .attr('y', lineMargin.top / 4)
-    .attr('class', 'lineTitle')
-    .text('Revenue')
-
-  lineSvg.append('text')
-    .attr('x', lineWidth * .75)
-    .attr('y', lineMargin.top / 4)
-    .attr('class', 'lineTitle')
-    .text('Spending')
-
-  //Define axes
-  const revXAxis = d3__WEBPACK_IMPORTED_MODULE_0__["axisBottom"]()
-    .scale(revLineX)
-    .tickValues(revLineX.domain().filter((d, i) => i === 0 || i === 49)) //first and last year
-    .tickSize(0)
-
-  const spendXAxis = d3__WEBPACK_IMPORTED_MODULE_0__["axisBottom"]()
-    .scale(spendLineX)
-    .tickValues(revLineX.domain().filter((d, i) => i === 0 || i === 49))
-    .tickSize(0)
-
-  //create axes
-  lineSvg.append('g')
-    .attr('class', 'revAxis x')
-    .attr('transform', 'translate(-7,' + (lineHeight - lineMargin.bottom) + ')')
-    .call(revXAxis)
-
-  //create axes
-  lineSvg.append('g')
-    .attr('class', 'spendAxis x')
-    .attr('transform', 'translate(-7,' + (lineHeight - lineMargin.bottom) + ')')
-    .call(spendXAxis)
-
-  //lines and labels indicating current year
-  lineSvg.append('g')
-    .attr('class', 'thisYearLine rev')
-    .append('line')
-    .attr('x1', revLineX(thisYear))
-    .attr('x2', revLineX(thisYear))
-    .attr('y1', lineMargin.top)
-    .attr('y2', lineHeight - lineMargin.bottom)
-
-  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.thisYearLine.rev')
-    .append('text')
-    .text(d => thisYear)
-    .attr('x', revLineX(thisYear))
-    .attr('y', lineHeight + lineMargin.bottom * .2)
-
-  lineSvg.append('g')
-    .attr('class', 'thisYearLine spend')
-    .append('line')
-    .attr('x1', spendLineX(thisYear))
-    .attr('x2', spendLineX(thisYear))
-    .attr('y1', lineMargin.top)
-    .attr('y2', lineHeight - lineMargin.bottom)
-
-  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.thisYearLine.spend')
-    .append('text')
-    .text(d => thisYear)
-    .attr('x', spendLineX(thisYear))
-    .attr('y', lineHeight + lineMargin.bottom * .2)
+  lineSvg.append('g').attr('class', 'thisYearLine rev').append('line').attr('x1', revLineX(thisYear)).attr('x2', revLineX(thisYear)).attr('y1', lineMargin.top).attr('y2', lineHeight - lineMargin.bottom);
+  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.thisYearLine.rev').append('text').text(function (d) {
+    return thisYear;
+  }).attr('x', revLineX(thisYear)).attr('y', lineHeight + lineMargin.bottom * .2);
+  lineSvg.append('g').attr('class', 'thisYearLine spend').append('line').attr('x1', spendLineX(thisYear)).attr('x2', spendLineX(thisYear)).attr('y1', lineMargin.top).attr('y2', lineHeight - lineMargin.bottom);
+  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.thisYearLine.spend').append('text').text(function (d) {
+    return thisYear;
+  }).attr('x', spendLineX(thisYear)).attr('y', lineHeight + lineMargin.bottom * .2);
 }
-
 function updateThisYearLine(thisYear) {
-
   //line indicating current year
-  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.thisYearLine.rev line')
-    .attr('x1', revLineX(thisYear))
-    .attr('x2', revLineX(thisYear))
-
-  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.thisYearLine.rev text')
-    .text(d => thisYear)
-    .attr('x', revLineX(thisYear))
-    .style('opacity', d => (thisYear == 1968 || thisYear == 2017) ? 0 : 1)
-
-  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.thisYearLine.spend line')
-    .attr('x1', spendLineX(thisYear))
-    .attr('x2', spendLineX(thisYear))
-
-  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.thisYearLine.spend text')
-    .text(d => thisYear)
-    .attr('x', spendLineX(thisYear))
-    .style('opacity', d => (thisYear == 1968 || thisYear == 2017) ? 0 : 1);
+  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.thisYearLine.rev line').attr('x1', revLineX(thisYear)).attr('x2', revLineX(thisYear));
+  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.thisYearLine.rev text').text(function (d) {
+    return thisYear;
+  }).attr('x', revLineX(thisYear)).style('opacity', function (d) {
+    return thisYear == 1968 || thisYear == 2017 ? 0 : 1;
+  });
+  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.thisYearLine.spend line').attr('x1', spendLineX(thisYear)).attr('x2', spendLineX(thisYear));
+  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.thisYearLine.spend text').text(function (d) {
+    return thisYear;
+  }).attr('x', spendLineX(thisYear)).style('opacity', function (d) {
+    return thisYear == 1968 || thisYear == 2017 ? 0 : 1;
+  });
 
   (function (d) {
     if (window.key != 0 && window.lineLabelData) {
-      d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.lineLabel').remove()
-
+      d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.lineLabel').remove();
       d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.lineNode').filter(function (d, i) {
-          return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') == window.key
-        })
-        .append('g')
-        .selectAll('text')
-        .data(window.lineLabelData)
-        .enter()
-        .append('text')
-        .filter(function (d, i) {
-          return i === 0 || i === (window.lineLabelData.length - 1) || d.year === thisYear
-        })
-        .attr('x', (d, i) => (d.type == 'Revenue') ? revLineX(d.year) : spendLineX(d.year))
-        .attr('y', d => lineY(d.value) - 14)
-        .text((d, i) => Object(_utils__WEBPACK_IMPORTED_MODULE_1__["formatNumber"])(d.value))
-        .attr('class', 'lineLabel')
+        return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') == window.key;
+      }).append('g').selectAll('text').data(window.lineLabelData).enter().append('text').filter(function (d, i) {
+        return i === 0 || i === window.lineLabelData.length - 1 || d.year === thisYear;
+      }).attr('x', function (d, i) {
+        return d.type == 'Revenue' ? revLineX(d.year) : spendLineX(d.year);
+      }).attr('y', function (d) {
+        return lineY(d.value) - 14;
+      }).text(function (d, i) {
+        return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["formatNumber"])(d.value);
+      }).attr('class', 'lineLabel');
     }
-  })()
+  })();
 }
 
 /***/ }),
@@ -30785,230 +30562,154 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 function drawSankey() {
-
   // set the dimensions and margins of the graph
   window.sankeyMargin = {
     top: 30,
     right: 10,
     bottom: 10,
     left: 10
-  }
+  };
+  window.sankeyWidth = sankeyContainer.offsetWidth - sankeyMargin.left - sankeyMargin.right;
+  window.sankeyHeight = 375 - sankeyMargin.top - sankeyMargin.bottom; // append the svg object to the body of the page
 
-  window.sankeyWidth = sankeyContainer.offsetWidth - sankeyMargin.left - sankeyMargin.right
-  window.sankeyHeight = 375 - sankeyMargin.top - sankeyMargin.bottom
+  window.sankeySvg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('#sankeyContainer').append('svg').attr('width', sankeyWidth + sankeyMargin.left + sankeyMargin.right).attr('height', sankeyHeight + sankeyMargin.top + sankeyMargin.bottom).attr('class', 'sankeyCanvas').append('g').attr('transform', "translate(".concat(sankeyMargin.left, ",").concat(sankeyMargin.top, ")")); // Set the sankey diagram properties
 
-  // append the svg object to the body of the page
-  window.sankeySvg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('#sankeyContainer').append('svg')
-    .attr('width', sankeyWidth + sankeyMargin.left + sankeyMargin.right)
-    .attr('height', sankeyHeight + sankeyMargin.top + sankeyMargin.bottom)
-    .attr('class', 'sankeyCanvas')
-    .append('g')
-    .attr('transform',
-      `translate(${sankeyMargin.left},${sankeyMargin.top})`)
+  window.sankey = _assets_d3sankey__WEBPACK_IMPORTED_MODULE_1__["d3sankey"]().nodeWidth(60).nodePadding(20).size([sankeyWidth, sankeyHeight]);
+  var path = sankey.link();
+  sankey.nodes(nodes).links(links).layout(1000);
+  _utils__WEBPACK_IMPORTED_MODULE_2__["fontScale"].domain(d3__WEBPACK_IMPORTED_MODULE_0__["extent"](nodes, function (d) {
+    return d.value;
+  })); // add in the links
 
-  // Set the sankey diagram properties
-  window.sankey = _assets_d3sankey__WEBPACK_IMPORTED_MODULE_1__["d3sankey"]()
-    .nodeWidth(60)
-    .nodePadding(20)
-    .size([sankeyWidth, sankeyHeight])
+  window.link = sankeySvg.append('g').selectAll('.link').data(links, function (d) {
+    return d.id;
+  }).enter().append('path').attr('class', 'link').attr('d', path).style('stroke', function (d) {
+    if (d.type == 'Revenue') {
+      return 'green';
+    } else if (d.type == 'Spending') {
+      return 'red';
+    } else {
+      return 'grey';
+    }
+  }).style('stroke-width', function (d) {
+    return Math.max(1, d.dy);
+  }).attr('key', function (d) {
+    return d.type == 'Revenue' ? d.source.name.split(' ').join('_') : d.target.name.split(' ').join('_');
+  }).on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_2__["highlight"]); // add in the nodes
 
-  const path = sankey.link()
+  window.node = sankeySvg.append('g').selectAll('.node').data(nodes).enter().append('g').attr('class', 'node').attr('transform', function (d) {
+    return "translate(".concat(d.x, ",").concat(d.y, ")");
+  }); // add the rectangles for the nodes
 
-  sankey.nodes(nodes)
-    .links(links)
-    .layout(1000)
+  node.append('rect').attr('height', function (d) {
+    return d.dy < 0 ? .1 : d.dy;
+  }).attr('width', sankey.nodeWidth()).attr('key', function (d) {
+    return d.name.split(' ').join('_');
+  }).attr('value', function (d) {
+    return d.value;
+  }).attr('class', 'nodeRect').on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_2__["highlight"]); // title for the nodes
 
-  _utils__WEBPACK_IMPORTED_MODULE_2__["fontScale"].domain(d3__WEBPACK_IMPORTED_MODULE_0__["extent"](nodes, d => d.value))
+  node.append('text').attr('x', -6).attr('y', function (d) {
+    return d.dy / 2;
+  }).attr('dy', '.35em').attr('text-anchor', 'end').attr('transform', null).style('font-size', function (d) {
+    return Math.floor(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["fontScale"])(d.value)) + 'px';
+  }).text(function (d) {
+    return d.name;
+  }).attr('class', 'nodeLabel').filter(function (d) {
+    return d.x < sankeyWidth / 2;
+  }).attr('x', 6 + sankey.nodeWidth()).attr('text-anchor', 'start'); // % for the nodes
 
-  // add in the links
-  window.link = sankeySvg.append('g').selectAll('.link')
-    .data(links, d => d.id)
-    .enter().append('path')
-    .attr('class', 'link')
-    .attr('d', path)
-    .style('stroke', d => {
-      if (d.type == 'Revenue') {
-        return 'green'
-      } else if (d.type == 'Spending') {
-        return 'red'
-      } else {
-        return 'grey'
-      }
-    })
-    .style('stroke-width', d => Math.max(1, d.dy))
-    .attr('key', d => (d.type == 'Revenue') ? d.source.name.split(' ').join('_') : d.target.name.split(' ').join('_'))
-    .on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_2__["highlight"])
+  node.append('text').attr('x', 30).attr('y', function (d) {
+    return d.dy / 2;
+  }).attr('dy', '.35em').attr('class', 'nodePercent').text(function (d) {
+    return "".concat(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(d.value), "%");
+  }).filter(function (d) {
+    return d.value <= 1 || d.node == 20;
+  }) //do spending seperately to correctly show surplus
+  .style('opacity', 0); //PERCENT OF GDP
 
-  // add in the nodes
-  window.node = sankeySvg
-    .append('g')
-    .selectAll('.node')
-    .data(nodes)
-    .enter()
-    .append('g')
-    .attr('class', 'node')
-    .attr('transform', d => `translate(${d.x},${d.y})`)
+  sankeySvg.append('text').attr('x', 0).attr('y', -5).attr('dy', '0em').text('Percent of GDP').attr('class', 'percent'); // % for spending in times of surplus using seperate data
 
-  // add the rectangles for the nodes
-  node.append('rect')
-    .attr('height', d => d.dy < 0 ? .1 : d.dy)
-    .attr('width', sankey.nodeWidth())
-    .attr('key', d => d.name.split(' ').join('_'))
-    .attr('value', d => d.value)
-    .attr('class', 'nodeRect')
-    .on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_2__["highlight"])
-
-  // title for the nodes
-  node.append('text')
-    .attr('x', -6)
-    .attr('y', d => d.dy / 2)
-    .attr('dy', '.35em')
-    .attr('text-anchor', 'end')
-    .attr('transform', null)
-    .style('font-size', d => Math.floor(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["fontScale"])(d.value)) + 'px')
-    .text(d => d.name)
-    .attr('class', 'nodeLabel')
-    .filter(d => d.x < sankeyWidth / 2)
-    .attr('x', 6 + sankey.nodeWidth())
-    .attr('text-anchor', 'start')
-
-
-  // % for the nodes
-  node.append('text')
-    .attr('x', 30)
-    .attr('y', d => d.dy / 2)
-    .attr('dy', '.35em')
-    .attr('class', 'nodePercent')
-    .text(d => `${Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(d.value)}%`)
-    .filter(d => d.value <= 1 || d.node == 20) //do spending seperately to correctly show surplus
-    .style('opacity', 0)
-
-  //PERCENT OF GDP
-  sankeySvg.append('text')
-    .attr('x', 0)
-    .attr('y', -5)
-    .attr('dy', '0em')
-    .text('Percent of GDP')
-    .attr('class', 'percent')
-
-  // % for spending in times of surplus using seperate data
-  node.append('text')
-    .attr('text-anchor', 'middle')
-    .attr('x', 30)
-    .attr('y', d => d.dy / 2)
-    .style('font-size', 18)
-    .attr('dy', '.35em')
-    .filter(d => d.node == 20)
-    .text(() => Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(thisYearDeficit[0].spending) + '%')
-    .attr('class', 'spendingNodePercent')
+  node.append('text').attr('text-anchor', 'middle').attr('x', 30).attr('y', function (d) {
+    return d.dy / 2;
+  }).style('font-size', 18).attr('dy', '.35em').filter(function (d) {
+    return d.node == 20;
+  }).text(function () {
+    return Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(thisYearDeficit[0].spending) + '%';
+  }).attr('class', 'spendingNodePercent');
 }
-
 function updateSankey() {
-  const path = sankey.link()
+  var path = sankey.link();
+  sankey.nodes(nodes).links(links).layout(1000);
+  sankey.relayout();
+  _utils__WEBPACK_IMPORTED_MODULE_2__["fontScale"].domain(d3__WEBPACK_IMPORTED_MODULE_0__["extent"](nodes, function (d) {
+    return d.value;
+  })); // transition links
 
-  sankey.nodes(nodes)
-    .links(links)
-    .layout(1000)
+  sankeySvg.selectAll('.link').data(links).transition('newSankey').duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"]).attr('d', path).style('stroke-width', function (d) {
+    return Math.max(1, d.dy);
+  }); // transition nodes
 
-  sankey.relayout()
-  _utils__WEBPACK_IMPORTED_MODULE_2__["fontScale"].domain(d3__WEBPACK_IMPORTED_MODULE_0__["extent"](nodes, d => d.value))
+  sankeySvg.selectAll('.node').data(nodes).transition('newSankey').duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"]).attr('transform', function (d) {
+    return "translate(".concat(d.x, ",").concat(d.y, ")");
+  }); // transition rectangles for the nodes
 
-  // transition links
-  sankeySvg.selectAll('.link')
-    .data(links)
-    .transition('newSankey')
-    .duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
-    .attr('d', path)
-    .style('stroke-width', d => Math.max(1, d.dy))
+  sankeySvg.selectAll('.node rect').data(nodes).transition('newSankey').duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"]).attr('height', function (d) {
+    return d.dy < 0 ? 0.1 : d.dy;
+  }).attr('value', function (d) {
+    return d.value;
+  }); // transition title text for the nodes
 
-  // transition nodes
-  sankeySvg.selectAll('.node')
-    .data(nodes)
-    .transition('newSankey')
-    .duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
-    .attr('transform', d => `translate(${d.x},${d.y})`)
+  sankeySvg.selectAll('.nodeLabel').data(nodes).transition('newSankey').duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"]).style('font-size', function (d) {
+    return "".concat(Math.floor(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["fontScale"])(d.value)), "px");
+  }).attr('y', function (d) {
+    return d.dy / 2;
+  }); // transition % text for the nodes
 
-  // transition rectangles for the nodes
-  sankeySvg.selectAll('.node rect')
-    .data(nodes)
-    .transition('newSankey')
-    .duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
-    .attr('height', d => (d.dy < 0 ? 0.1 : d.dy))
-    .attr('value', d => d.value)
+  sankeySvg.selectAll('.nodePercent').data(nodes).transition('newSankey').duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"]).text(function (d) {
+    return "".concat(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(d.value), "%");
+  }).attr('y', function (d) {
+    return d.dy / 2;
+  }).style('opacity', 1).filter(function (d) {
+    return d.value < 1 || d.node == 20;
+  }) //do spending seperately to correctly show surplus
+  .style('opacity', 0); //remove old spending %
 
-  // transition title text for the nodes
-  sankeySvg.selectAll('.nodeLabel')
-    .data(nodes)
-    .transition('newSankey')
-    .duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
-    .style('font-size', d => `${Math.floor(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["fontScale"])(d.value))}px`)
-    .attr('y', d => d.dy / 2)
+  sankeySvg.selectAll('.spendingNodePercent').remove(); // % for spending in times of surplus using seperate data
 
-  // transition % text for the nodes
-  sankeySvg.selectAll('.nodePercent')
-    .data(nodes)
-    .transition('newSankey')
-    .duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
-    .text(d => `${Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(d.value)}%`)
-    .attr('y', d => d.dy / 2)
-    .style('opacity', 1)
-    .filter(d => d.value < 1 || d.node == 20) //do spending seperately to correctly show surplus
-    .style('opacity', 0)
-
-  //remove old spending %
-  sankeySvg.selectAll('.spendingNodePercent').remove()
-
-  // % for spending in times of surplus using seperate data
-  node.append('text')
-    .attr('text-anchor', 'middle')
-    .attr('x', 30)
-    .attr('y', d => d.dy / 2)
-    .style('font-size', 18)
-    .attr('dy', '.35em')
-    .filter(d => d.node == 20)
-    .text(() => Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(thisYearDeficit[0].spending) + '%')
-    .attr('class', 'spendingNodePercent')
+  node.append('text').attr('text-anchor', 'middle').attr('x', 30).attr('y', function (d) {
+    return d.dy / 2;
+  }).style('font-size', 18).attr('dy', '.35em').filter(function (d) {
+    return d.node == 20;
+  }).text(function () {
+    return Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(thisYearDeficit[0].spending) + '%';
+  }).attr('class', 'spendingNodePercent');
 }
-
 function drawDeficit() {
-
   //remove old, if any
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.deficit').remove()
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.deficitLabel').remove()
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.deficit').remove();
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.deficitLabel').remove(); //highlight deficit
 
-  //highlight deficit
-  window.barHeight = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('rect[key=Spending]').attr('height')
-  window.barVal = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('rect[key=Spending]').attr('value')
-  window.deficitVal = thisYearDeficit[0].deficit
+  window.barHeight = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('rect[key=Spending]').attr('height');
+  window.barVal = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('rect[key=Spending]').attr('value');
+  window.deficitVal = thisYearDeficit[0].deficit; //get deficit bar size with ratio of spending value to bar height
 
-  //get deficit bar size with ratio of spending value to bar height
-  window.deficitBarRatio = Math.floor((barHeight * deficitVal) / barVal)
-
-  window.deficitBar = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('rect[key=Spending]')
-    .select(function () {
-      return this.parentNode
-    })
-    .append('rect')
-    .attr('height', () => (deficitBarRatio < 0) ? -deficitBarRatio : deficitBarRatio)
-    .attr('width', sankey.nodeWidth())
-    .attr('y', d => (deficitBarRatio < 0) ? d.dy + deficitBarRatio : d.dy - deficitBarRatio)
-    .style('fill', () => (deficitBarRatio < 0) ? 'red' : 'blue')
-    .attr('class', 'deficit')
-    .style('opacity', 0)
-    .transition(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
-    .style('opacity', 0.8)
-
-  sankeySvg.append('text')
-    .attr('x', sankeyWidth / 2)
-    .attr('y', sankeyHeight * .92)
-    .attr('class', 'deficitLabel')
-    .text(() => (thisYearDeficit[0].deficit < 0) ? Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(-thisYearDeficit[0].deficit) + '% Deficit' : Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(thisYearDeficit[0].deficit) + '% Surplus')
-    .style('fill', () => (deficitBarRatio < 0) ? 'red' : 'blue')
-    .style('opacity', 0)
-    .transition(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
-    .style('opacity', 0.8)
+  window.deficitBarRatio = Math.floor(barHeight * deficitVal / barVal);
+  window.deficitBar = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('rect[key=Spending]').select(function () {
+    return this.parentNode;
+  }).append('rect').attr('height', function () {
+    return deficitBarRatio < 0 ? -deficitBarRatio : deficitBarRatio;
+  }).attr('width', sankey.nodeWidth()).attr('y', function (d) {
+    return deficitBarRatio < 0 ? d.dy + deficitBarRatio : d.dy - deficitBarRatio;
+  }).style('fill', function () {
+    return deficitBarRatio < 0 ? 'red' : 'blue';
+  }).attr('class', 'deficit').style('opacity', 0).transition(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"]).style('opacity', 0.8);
+  sankeySvg.append('text').attr('x', sankeyWidth / 2).attr('y', sankeyHeight * .92).attr('class', 'deficitLabel').text(function () {
+    return thisYearDeficit[0].deficit < 0 ? Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(-thisYearDeficit[0].deficit) + '% Deficit' : Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(thisYearDeficit[0].deficit) + '% Surplus';
+  }).style('fill', function () {
+    return deficitBarRatio < 0 ? 'red' : 'blue';
+  }).style('opacity', 0).transition(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"]).style('opacity', 0.8);
 }
 
 /***/ }),
@@ -31036,46 +30737,31 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 function drawSlider() {
-  const slider = _assets_d3_simple_slider__WEBPACK_IMPORTED_MODULE_1__["sliderHorizontal"]()
-    .min(1968)
-    .max(2017)
-    .step(1)
-    .width(barsContainer.offsetWidth - 62)
-    .tickFormat(d3__WEBPACK_IMPORTED_MODULE_0__["format"]('.4'))
-    .default(2017)
-    .on('end', thisYear => { //use end instead of onchange, is when user releases mouse
-      window.thisYear = thisYear
-      // d3.csv('../../data/us-budget-sankey-main.csv').then(csv => {
-      //   d3.csv('../../data/us-budget-sankey-deficit.csv').then(deficit => {
-      d3__WEBPACK_IMPORTED_MODULE_0__["csv"]('data/us-budget-sankey-main.csv').then(csv => {
-        d3__WEBPACK_IMPORTED_MODULE_0__["csv"]('data/us-budget-sankey-deficit.csv').then(deficit => {
-
-          //update
-          d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.deficit').remove()
-          d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.deficitLabel').remove()
-          Object(_utils__WEBPACK_IMPORTED_MODULE_4__["newData"])(csv, deficit, thisYear)
-          Object(_sankey__WEBPACK_IMPORTED_MODULE_5__["updateSankey"])()
-          setTimeout(() => Object(_sankey__WEBPACK_IMPORTED_MODULE_5__["drawDeficit"])(), _utils__WEBPACK_IMPORTED_MODULE_4__["newYearTransition"])
-        })
-      })
-    })
-    .on('onchange', thisYear => { //use end instead of onchange, is when user releases mouse
-      window.thisYear = thisYear
-      Object(_bars__WEBPACK_IMPORTED_MODULE_2__["updateBars"])(thisYear)
-      Object(_lines__WEBPACK_IMPORTED_MODULE_3__["updateThisYearLine"])(thisYear)
-    })
-
-  const g = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('div#slider').append('svg')
-    .attr('width', barsContainer.offsetWidth)
-    .attr('height', 90)
-    .append('g')
-    .attr('transform', 'translate(30,30)')
-
-  g.call(slider)
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('#slider')
-    .style('font-size', 20)
+  var slider = _assets_d3_simple_slider__WEBPACK_IMPORTED_MODULE_1__["sliderHorizontal"]().min(1968).max(2017).step(1).width(barsContainer.offsetWidth - 62).tickFormat(d3__WEBPACK_IMPORTED_MODULE_0__["format"]('.4'))["default"](2017).on('end', function (thisYear) {
+    //use end instead of onchange, is when user releases mouse
+    window.thisYear = thisYear;
+    d3__WEBPACK_IMPORTED_MODULE_0__["csv"]('data/us-budget-sankey-main.csv').then(function (csv) {
+      d3__WEBPACK_IMPORTED_MODULE_0__["csv"]('data/us-budget-sankey-deficit.csv').then(function (deficit) {
+        //update
+        d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.deficit').remove();
+        d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.deficitLabel').remove();
+        Object(_utils__WEBPACK_IMPORTED_MODULE_4__["newData"])(csv, deficit, thisYear);
+        Object(_sankey__WEBPACK_IMPORTED_MODULE_5__["updateSankey"])();
+        setTimeout(function () {
+          return Object(_sankey__WEBPACK_IMPORTED_MODULE_5__["drawDeficit"])();
+        }, _utils__WEBPACK_IMPORTED_MODULE_4__["newYearTransition"]);
+      });
+    });
+  }).on('onchange', function (thisYear) {
+    //use end instead of onchange, is when user releases mouse
+    window.thisYear = thisYear;
+    Object(_bars__WEBPACK_IMPORTED_MODULE_2__["updateBars"])(thisYear);
+    Object(_lines__WEBPACK_IMPORTED_MODULE_3__["updateThisYearLine"])(thisYear);
+  });
+  var g = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('div#slider').append('svg').attr('width', barsContainer.offsetWidth).attr('height', 90).append('g').attr('transform', 'translate(30,30)');
+  g.call(slider);
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('#slider').style('font-size', 20);
 }
 
 /***/ }),
@@ -31100,148 +30786,123 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stackMin", function() { return stackMin; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stackMax", function() { return stackMax; });
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+ // format variables
 
+var formatNumber = d3__WEBPACK_IMPORTED_MODULE_0__["format"]('.1f'); // zero decimal places
 
-// format variables
-const formatNumber = d3__WEBPACK_IMPORTED_MODULE_0__["format"]('.1f') // zero decimal places
-const format = d => formatNumber(d)
+var format = function format(d) {
+  return formatNumber(d);
+};
+var fontScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"]().range([14, 22]); //transition times
 
-const fontScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"]().range([14, 22])
-
-//transition times
-const newYearTransition = 800
-const highlightTransition = 50
-
-window.thisYear = 2017
-window.key = 0 //initialize for highlighting purposes; gets redefines as 'income', 'payroll', etc on mouseover
+var newYearTransition = 800;
+var highlightTransition = 50;
+window.thisYear = 2017;
+window.key = 0; //initialize for highlighting purposes; gets redefines as 'income', 'payroll', etc on mouseover
 
 function newData(csv, deficit, thisYear) {
-  window.thisYearCsv = csv.filter(d => d['year'] == thisYear)
-  thisYearCsv.forEach(d => d.dollars = +d.dollars)
-  window.thisYearDeficit = deficit.filter(d => d['year'] == thisYear)
-
-  //create an array to push all sources and targets, before making them unique
+  window.thisYearCsv = csv.filter(function (d) {
+    return d['year'] == thisYear;
+  });
+  thisYearCsv.forEach(function (d) {
+    return d.dollars = +d.dollars;
+  });
+  window.thisYearDeficit = deficit.filter(function (d) {
+    return d['year'] == thisYear;
+  }); //create an array to push all sources and targets, before making them unique
   //because starting nodes are not targets and end nodes are not sources
-  window.arr = []
-  thisYearCsv.forEach(d => {
-    arr.push(d.source)
-    arr.push(d.target)
-  })
 
-  // create nodes array
+  window.arr = [];
+  thisYearCsv.forEach(function (d) {
+    arr.push(d.source);
+    arr.push(d.target);
+  }); // create nodes array
 
-  window.nodes = arr.filter(onlyUnique).map((thisYearCsv, i) => {
+  window.nodes = arr.filter(onlyUnique).map(function (thisYearCsv, i) {
     return {
       node: i,
       name: thisYearCsv
-    }
-  })
+    };
+  }); // create links array
 
-  // create links array
-  window.links = thisYearCsv.map(thisYearCsv_row => {
+  window.links = thisYearCsv.map(function (thisYearCsv_row) {
     return {
       source: getNode('source'),
       target: getNode('target'),
       value: +thisYearCsv_row.value,
       type: thisYearCsv_row.type //to allow for proper keying
-    }
+
+    };
 
     function getNode(type) {
-      return nodes.filter(node_object => node_object.name == thisYearCsv_row[type])[0].node
+      return nodes.filter(function (node_object) {
+        return node_object.name == thisYearCsv_row[type];
+      })[0].node;
     }
-  })
-
-  window.lineData = csv
-  lineData.forEach(d => {
-    d.year = +d.year
-    d.value = +d.value
-  })
-
+  });
+  window.lineData = csv;
+  lineData.forEach(function (d) {
+    d.year = +d.year;
+    d.value = +d.value;
+  });
   return {
-    lineData,
-    links,
-    nodes,
-    thisYearCsv,
-    thisYearDeficit
-  }
+    lineData: lineData,
+    links: links,
+    nodes: nodes,
+    thisYearCsv: thisYearCsv,
+    thisYearDeficit: thisYearDeficit
+  };
 }
-
 function highlight() {
-  window.key = d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key')
+  window.key = d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key');
+  window.lineLabelData = lineData.filter(function (d) {
+    return d.source.split(' ').join('_') == key || d.target.split(' ').join('_') == key;
+  });
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.line').filter(function (d) {
+    return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') == key;
+  }).transition().duration(highlightTransition).style('opacity', 1);
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.line').filter(function (d) {
+    return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') != key;
+  }).transition().duration(highlightTransition).style('opacity', 0.2);
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.link').filter(function (d) {
+    return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') == key;
+  }).transition().duration(highlightTransition).style('stroke-opacity', 0.7);
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.link').filter(function (d) {
+    return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') != key;
+  }).transition().duration(highlightTransition).style('stroke-opacity', 0.4);
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.nodeRect').filter(function (d) {
+    return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') == key;
+  }).transition().duration(highlightTransition).style('opacity', 1);
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.nodeRect').filter(function (d) {
+    return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') != key;
+  }).transition().duration(highlightTransition).style('opacity', 0.5); //data points
 
-  window.lineLabelData = lineData.filter(d => d.source.split(' ').join('_') == key || d.target.split(' ').join('_') == key)
-
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.line')
-    .filter(function (d) {
-      return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') == key
-    })
-    .transition()
-    .duration(highlightTransition)
-    .style('opacity', 1)
-
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.line')
-    .filter(function (d) {
-      return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') != key
-    })
-    .transition()
-    .duration(highlightTransition)
-    .style('opacity', 0.2)
-
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.link')
-    .filter(function (d) {
-      return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') == key
-    })
-    .transition()
-    .duration(highlightTransition)
-    .style('stroke-opacity', 0.7)
-
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.link')
-    .filter(function (d) {
-      return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') != key
-    })
-    .transition()
-    .duration(highlightTransition)
-    .style('stroke-opacity', 0.4)
-
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.nodeRect')
-    .filter(function (d) {
-      return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') == key
-    })
-    .transition()
-    .duration(highlightTransition)
-    .style('opacity', 1)
-
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.nodeRect')
-    .filter(function (d) {
-      return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') != key
-    })
-    .transition()
-    .duration(highlightTransition)
-    .style('opacity', 0.5)
-
-  //data points
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.lineLabel').remove()
-
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.lineLabel').remove();
   d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.lineNode').filter(function (d, i) {
-      return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') == key
-    })
-    .append('g')
-    .selectAll('text')
-    .data(lineLabelData)
-    .enter()
-    .append('text')
-    .filter((d, i) => i === 0 || i === (lineLabelData.length - 1) || d.year === thisYear)
-    .attr('x', (d, i) => (d.type == 'Revenue') ? revLineX(d.year) : spendLineX(d.year))
-    .attr('y', d => lineY(d.value) - 14)
-    .text((d, i) => formatNumber(d.value))
-    .attr('class', 'lineLabel')
+    return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') == key;
+  }).append('g').selectAll('text').data(lineLabelData).enter().append('text').filter(function (d, i) {
+    return i === 0 || i === lineLabelData.length - 1 || d.year === thisYear;
+  }).attr('x', function (d, i) {
+    return d.type == 'Revenue' ? revLineX(d.year) : spendLineX(d.year);
+  }).attr('y', function (d) {
+    return lineY(d.value) - 14;
+  }).text(function (d, i) {
+    return formatNumber(d.value);
+  }).attr('class', 'lineLabel');
 }
-
-const onlyUnique = (value, index, self) => self.indexOf(value) === index
-
-const stackMin = series => d3__WEBPACK_IMPORTED_MODULE_0__["min"](series, d => d[0])
-
-const stackMax = series => d3__WEBPACK_IMPORTED_MODULE_0__["max"](series, d => d[1])
+var onlyUnique = function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+};
+var stackMin = function stackMin(series) {
+  return d3__WEBPACK_IMPORTED_MODULE_0__["min"](series, function (d) {
+    return d[0];
+  });
+};
+var stackMax = function stackMax(series) {
+  return d3__WEBPACK_IMPORTED_MODULE_0__["max"](series, function (d) {
+    return d[1];
+  });
+};
 
 /***/ })
 
