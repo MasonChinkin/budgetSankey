@@ -1,6 +1,12 @@
 import * as d3 from 'd3'
 import * as d3Slider from './assets/d3-simple-slider'
 import * as d3Sankey from './assets/d3sankey'
+import {
+  stackMin,
+  stackMax,
+  onlyUnique,
+  highlight
+} from './utils';
 
 const fontScale = d3.scaleLinear().range([14, 22])
 
@@ -11,34 +17,11 @@ const format = d => formatNumber(d)
 let key = 0 //initialize for highlighting purposes; gets redefines as 'income', 'payroll', etc on mouseover
 
 //transition times
-const highlightTransition = 50
 const newYearTransition = 800
 
 window.thisYear = 2017
 
-// load the data
-export const drawDasboard = () => {
-  // d3.csv('../../data/us-budget-sankey-main.csv').then(csv => { // main
-  //   d3.csv('../../data/us-budget-sankey-deficit.csv').then(deficit => { // deficit
-  //     d3.csv('../../data/us-budget-sankey-bars.csv').then(barData => { // bars
-
-  // absolute path for github pages
-  d3.csv('data/us-budget-sankey-main.csv').then(csv => { // main
-    d3.csv('data/us-budget-sankey-deficit.csv').then(deficit => { // deficit
-      d3.csv('data/us-budget-sankey-bars.csv').then(barData => { // bars
-
-        newData(csv, deficit, thisYear)
-        drawBars(barData)
-        drawSankey()
-        drawDeficit()
-        drawSlider()
-        drawLines()
-      })
-    })
-  })
-}
-
-function newData(csv, deficit, thisYear) {
+export function newData(csv, deficit, thisYear) {
   window.thisYearCsv = csv.filter(d => d['year'] == thisYear)
   thisYearCsv.forEach(d => d.dollars = +d.dollars)
   window.thisYearDeficit = deficit.filter(d => d['year'] == thisYear)
@@ -81,7 +64,7 @@ function newData(csv, deficit, thisYear) {
   })
 }
 
-function drawBars(barData) {
+export function drawBars(barData) {
   // set the dimensions and margins of the graph
   let barsMargin = {
     top: 10,
@@ -177,7 +160,7 @@ function drawBars(barData) {
     .text('Spending/Deficit')
 }
 
-function updateBars(thisYear) {
+export function updateBars(thisYear) {
   const transition = 50
 
   rects.transition()
@@ -187,7 +170,7 @@ function updateBars(thisYear) {
     .style('stroke-width', d => (d.data.year === thisYear) ? '2px' : 'none')
 }
 
-function drawSankey() {
+export function drawSankey() {
 
   // set the dimensions and margins of the graph
   window.sankeyMargin = {
@@ -306,7 +289,7 @@ function drawSankey() {
     .attr('class', 'spendingNodePercent')
 }
 
-function updateSankey() {
+export function updateSankey() {
   const path = sankey.link()
 
   sankey.nodes(nodes)
@@ -373,7 +356,7 @@ function updateSankey() {
     .attr('class', 'spendingNodePercent')
 }
 
-function drawDeficit() {
+export function drawDeficit() {
 
   //remove old, if any
   d3.selectAll('.deficit').remove()
@@ -412,7 +395,7 @@ function drawDeficit() {
     .style('opacity', 0.8)
 }
 
-function drawSlider() {
+export function drawSlider() {
   const slider = d3Slider.sliderHorizontal()
     .min(1968)
     .max(2017)
@@ -453,7 +436,7 @@ function drawSlider() {
     .style('font-size', 20)
 }
 
-function drawLines() {
+export function drawLines() {
   //seperate datasets filtered by type
   const revLineData = lineData.filter(d => d.type == 'Revenue')
   const spendLineData = lineData.filter(d => d.type == 'Spending')
@@ -600,7 +583,7 @@ function drawLines() {
     .attr('y', lineHeight + lineMargin.bottom * .2)
 }
 
-function updateThisYearLine(thisYear) {
+export function updateThisYearLine(thisYear) {
 
   //line indicating current year
   d3.select('.thisYearLine.rev line')
@@ -643,81 +626,3 @@ function updateThisYearLine(thisYear) {
     }
   })()
 }
-
-function highlight() {
-  key = d3.select(this).attr('key')
-
-  window.lineLabelData = lineData.filter(d => d.source.split(' ').join('_') == key || d.target.split(' ').join('_') == key)
-
-  d3.selectAll('.line')
-    .filter(function (d) {
-      return d3.select(this).attr('key') == key
-    })
-    .transition()
-    .duration(highlightTransition)
-    .style('opacity', 1)
-
-  d3.selectAll('.line')
-    .filter(function (d) {
-      return d3.select(this).attr('key') != key
-    })
-    .transition()
-    .duration(highlightTransition)
-    .style('opacity', 0.2)
-
-  d3.selectAll('.link')
-    .filter(function (d) {
-      return d3.select(this).attr('key') == key
-    })
-    .transition()
-    .duration(highlightTransition)
-    .style('stroke-opacity', 0.7)
-
-  d3.selectAll('.link')
-    .filter(function (d) {
-      return d3.select(this).attr('key') != key
-    })
-    .transition()
-    .duration(highlightTransition)
-    .style('stroke-opacity', 0.4)
-
-  d3.selectAll('.nodeRect')
-    .filter(function (d) {
-      return d3.select(this).attr('key') == key
-    })
-    .transition()
-    .duration(highlightTransition)
-    .style('opacity', 1)
-
-  d3.selectAll('.nodeRect')
-    .filter(function (d) {
-      return d3.select(this).attr('key') != key
-    })
-    .transition()
-    .duration(highlightTransition)
-    .style('opacity', 0.5)
-
-  //data points
-  d3.selectAll('.lineLabel').remove()
-
-  d3.selectAll('.lineNode').filter(function (d, i) {
-      return d3.select(this).attr('key') == key
-    })
-    .append('g')
-    .selectAll('text')
-    .data(lineLabelData)
-    .enter()
-    .append('text')
-    .filter((d, i) => i === 0 || i === (lineLabelData.length - 1) || d.year === thisYear)
-    .attr('x', (d, i) => (d.type == 'Revenue') ? revLineX(d.year) : spendLineX(d.year))
-    .attr('y', d => lineY(d.value) - 14)
-    .text((d, i) => formatNumber(d.value))
-    .attr('class', 'lineLabel')
-
-  console.log(thisYear)
-}
-const onlyUnique = (value, index, self) => self.indexOf(value) === index
-
-const stackMin = series => d3.min(series, d => d[0])
-
-const stackMax = series => d3.max(series, d => d[1])
