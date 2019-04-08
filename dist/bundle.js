@@ -29679,7 +29679,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.scss */ "./src/app.scss");
 /* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_app_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
-/* harmony import */ var _js_main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/main */ "./src/js/main.js");
+/* harmony import */ var _js_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/utils */ "./src/js/utils.js");
+/* harmony import */ var _js_bars__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/bars */ "./src/js/bars.js");
+/* harmony import */ var _js_slider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/slider */ "./src/js/slider.js");
+/* harmony import */ var _js_lines__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/lines */ "./src/js/lines.js");
+/* harmony import */ var _js_sankey__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/sankey */ "./src/js/sankey.js");
+
+
+
+
 
 
 
@@ -29703,12 +29711,12 @@ const drawDashboard = () => {
     d3__WEBPACK_IMPORTED_MODULE_1__["csv"]('data/us-budget-sankey-deficit.csv').then(deficit => { // deficit
       d3__WEBPACK_IMPORTED_MODULE_1__["csv"]('data/us-budget-sankey-bars.csv').then(barData => { // bars
 
-        Object(_js_main__WEBPACK_IMPORTED_MODULE_2__["newData"])(csv, deficit, thisYear)
-        Object(_js_main__WEBPACK_IMPORTED_MODULE_2__["drawBars"])(barData)
-        Object(_js_main__WEBPACK_IMPORTED_MODULE_2__["drawSankey"])()
-        Object(_js_main__WEBPACK_IMPORTED_MODULE_2__["drawDeficit"])()
-        Object(_js_main__WEBPACK_IMPORTED_MODULE_2__["drawSlider"])()
-        Object(_js_main__WEBPACK_IMPORTED_MODULE_2__["drawLines"])()
+        Object(_js_utils__WEBPACK_IMPORTED_MODULE_2__["newData"])(csv, deficit, thisYear)
+        Object(_js_bars__WEBPACK_IMPORTED_MODULE_3__["drawBars"])(barData)
+        Object(_js_sankey__WEBPACK_IMPORTED_MODULE_6__["drawSankey"])()
+        Object(_js_sankey__WEBPACK_IMPORTED_MODULE_6__["drawDeficit"])()
+        Object(_js_slider__WEBPACK_IMPORTED_MODULE_4__["drawSlider"])()
+        Object(_js_lines__WEBPACK_IMPORTED_MODULE_5__["drawLines"])()
       })
     })
   })
@@ -30426,89 +30434,21 @@ function d3sankey() {
 
 /***/ }),
 
-/***/ "./src/js/main.js":
+/***/ "./src/js/bars.js":
 /*!************************!*\
-  !*** ./src/js/main.js ***!
+  !*** ./src/js/bars.js ***!
   \************************/
-/*! exports provided: newData, drawBars, updateBars, drawSankey, updateSankey, drawDeficit, drawSlider, drawLines, updateThisYearLine */
+/*! exports provided: drawBars, updateBars */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newData", function() { return newData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drawBars", function() { return drawBars; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateBars", function() { return updateBars; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drawSankey", function() { return drawSankey; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateSankey", function() { return updateSankey; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drawDeficit", function() { return drawDeficit; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drawSlider", function() { return drawSlider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drawLines", function() { return drawLines; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateThisYearLine", function() { return updateThisYearLine; });
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
-/* harmony import */ var _assets_d3_simple_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/d3-simple-slider */ "./src/js/assets/d3-simple-slider.js");
-/* harmony import */ var _assets_d3_simple_slider__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_d3_simple_slider__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _assets_d3sankey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/d3sankey */ "./src/js/assets/d3sankey.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ "./src/js/utils.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./src/js/utils.js");
 
 
-
-
-
-const fontScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"]().range([14, 22])
-
-// format variables
-const formatNumber = d3__WEBPACK_IMPORTED_MODULE_0__["format"]('.1f') // zero decimal places
-const format = d => formatNumber(d)
-
-let key = 0 //initialize for highlighting purposes; gets redefines as 'income', 'payroll', etc on mouseover
-
-//transition times
-const newYearTransition = 800
-
-window.thisYear = 2017
-
-function newData(csv, deficit, thisYear) {
-  window.thisYearCsv = csv.filter(d => d['year'] == thisYear)
-  thisYearCsv.forEach(d => d.dollars = +d.dollars)
-  window.thisYearDeficit = deficit.filter(d => d['year'] == thisYear)
-
-  //create an array to push all sources and targets, before making them unique
-  //because starting nodes are not targets and end nodes are not sources
-  window.arr = []
-  thisYearCsv.forEach(d => {
-    arr.push(d.source)
-    arr.push(d.target)
-  })
-
-  // create nodes array
-
-  window.nodes = arr.filter(_utils__WEBPACK_IMPORTED_MODULE_3__["onlyUnique"]).map((thisYearCsv, i) => {
-    return {
-      node: i,
-      name: thisYearCsv
-    }
-  })
-
-  // create links array
-  window.links = thisYearCsv.map(thisYearCsv_row => {
-    return {
-      source: getNode('source'),
-      target: getNode('target'),
-      value: +thisYearCsv_row.value,
-      type: thisYearCsv_row.type //to allow for proper keying
-    }
-
-    function getNode(type) {
-      return nodes.filter(node_object => node_object.name == thisYearCsv_row[type])[0].node
-    }
-  })
-
-  window.lineData = csv
-  lineData.forEach(d => {
-    d.year = +d.year
-    d.value = +d.value
-  })
-}
 
 function drawBars(barData) {
   // set the dimensions and margins of the graph
@@ -30548,7 +30488,7 @@ function drawBars(barData) {
     .paddingOuter(0.75)
 
   let barsYScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"]()
-    .domain([d3__WEBPACK_IMPORTED_MODULE_0__["min"](series, _utils__WEBPACK_IMPORTED_MODULE_3__["stackMin"]), d3__WEBPACK_IMPORTED_MODULE_0__["max"](series, _utils__WEBPACK_IMPORTED_MODULE_3__["stackMax"])])
+    .domain([d3__WEBPACK_IMPORTED_MODULE_0__["min"](series, _utils__WEBPACK_IMPORTED_MODULE_1__["stackMin"]), d3__WEBPACK_IMPORTED_MODULE_0__["max"](series, _utils__WEBPACK_IMPORTED_MODULE_1__["stackMax"])])
     .range([barsHeight - barsMargin.bottom, barsMargin.top])
     .nice()
 
@@ -30616,271 +30556,23 @@ function updateBars(thisYear) {
     .style('stroke-width', d => (d.data.year === thisYear) ? '2px' : 'none')
 }
 
-function drawSankey() {
+/***/ }),
 
-  // set the dimensions and margins of the graph
-  window.sankeyMargin = {
-    top: 30,
-    right: 10,
-    bottom: 10,
-    left: 10
-  }
+/***/ "./src/js/lines.js":
+/*!*************************!*\
+  !*** ./src/js/lines.js ***!
+  \*************************/
+/*! exports provided: drawLines, updateThisYearLine */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-  window.sankeyWidth = sankeyContainer.offsetWidth - sankeyMargin.left - sankeyMargin.right
-  window.sankeyHeight = 375 - sankeyMargin.top - sankeyMargin.bottom
-
-  // append the svg object to the body of the page
-  window.sankeySvg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('#sankeyContainer').append('svg')
-    .attr('width', sankeyWidth + sankeyMargin.left + sankeyMargin.right)
-    .attr('height', sankeyHeight + sankeyMargin.top + sankeyMargin.bottom)
-    .attr('class', 'sankeyCanvas')
-    .append('g')
-    .attr('transform',
-      `translate(${sankeyMargin.left},${sankeyMargin.top})`)
-
-  // Set the sankey diagram properties
-  window.sankey = _assets_d3sankey__WEBPACK_IMPORTED_MODULE_2__["d3sankey"]()
-    .nodeWidth(60)
-    .nodePadding(20)
-    .size([sankeyWidth, sankeyHeight])
-
-  const path = sankey.link()
-
-  sankey.nodes(nodes)
-    .links(links)
-    .layout(1000)
-
-  fontScale.domain(d3__WEBPACK_IMPORTED_MODULE_0__["extent"](nodes, d => d.value))
-
-  // add in the links
-  window.link = sankeySvg.append('g').selectAll('.link')
-    .data(links, d => d.id)
-    .enter().append('path')
-    .attr('class', 'link')
-    .attr('d', path)
-    .style('stroke', d => {
-      if (d.type == 'Revenue') {
-        return 'green'
-      } else if (d.type == 'Spending') {
-        return 'red'
-      } else {
-        return 'grey'
-      }
-    })
-    .style('stroke-width', d => Math.max(1, d.dy))
-    .attr('key', d => (d.type == 'Revenue') ? d.source.name.split(' ').join('_') : d.target.name.split(' ').join('_'))
-    .on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_3__["highlight"])
-
-  // add in the nodes
-  window.node = sankeySvg
-    .append('g')
-    .selectAll('.node')
-    .data(nodes)
-    .enter()
-    .append('g')
-    .attr('class', 'node')
-    .attr('transform', d => `translate(${d.x},${d.y})`)
-
-  // add the rectangles for the nodes
-  node.append('rect')
-    .attr('height', d => d.dy < 0 ? .1 : d.dy)
-    .attr('width', sankey.nodeWidth())
-    .attr('key', d => d.name.split(' ').join('_'))
-    .attr('value', d => d.value)
-    .attr('class', 'nodeRect')
-    .on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_3__["highlight"])
-
-  // title for the nodes
-  node.append('text')
-    .attr('x', -6)
-    .attr('y', d => d.dy / 2)
-    .attr('dy', '.35em')
-    .attr('text-anchor', 'end')
-    .attr('transform', null)
-    .style('font-size', d => Math.floor(fontScale(d.value)) + 'px')
-    .text(d => d.name)
-    .attr('class', 'nodeLabel')
-    .filter(d => d.x < sankeyWidth / 2)
-    .attr('x', 6 + sankey.nodeWidth())
-    .attr('text-anchor', 'start')
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drawLines", function() { return drawLines; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateThisYearLine", function() { return updateThisYearLine; });
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./src/js/utils.js");
 
 
-  // % for the nodes
-  node.append('text')
-    .attr('x', 30)
-    .attr('y', d => d.dy / 2)
-    .attr('dy', '.35em')
-    .attr('class', 'nodePercent')
-    .text(d => format(d.value) + '%')
-    .filter(d => d.value <= 1 || d.node == 20) //do spending seperately to correctly show surplus
-    .style('opacity', 0)
-
-  //PERCENT OF GDP
-  sankeySvg.append('text')
-    .attr('x', 0)
-    .attr('y', -5)
-    .attr('dy', '0em')
-    .text('Percent of GDP')
-    .attr('class', 'percent')
-
-  // % for spending in times of surplus using seperate data
-  node.append('text')
-    .attr('text-anchor', 'middle')
-    .attr('x', 30)
-    .attr('y', d => d.dy / 2)
-    .style('font-size', 18)
-    .attr('dy', '.35em')
-    .filter(d => d.node == 20)
-    .text(() => format(thisYearDeficit[0].spending) + '%')
-    .attr('class', 'spendingNodePercent')
-}
-
-function updateSankey() {
-  const path = sankey.link()
-
-  sankey.nodes(nodes)
-    .links(links)
-    .layout(1000)
-
-  sankey.relayout()
-  fontScale.domain(d3__WEBPACK_IMPORTED_MODULE_0__["extent"](nodes, d => d.value))
-
-  // transition links
-  sankeySvg.selectAll('.link')
-    .data(links)
-    .transition('newSankey')
-    .duration(newYearTransition)
-    .attr('d', path)
-    .style('stroke-width', d => Math.max(1, d.dy))
-
-  // transition nodes
-  sankeySvg.selectAll('.node')
-    .data(nodes)
-    .transition('newSankey')
-    .duration(newYearTransition)
-    .attr('transform', d => `translate(${d.x},${d.y})`)
-
-  // transition rectangles for the nodes
-  sankeySvg.selectAll('.node rect')
-    .data(nodes)
-    .transition('newSankey')
-    .duration(newYearTransition)
-    .attr('height', d => (d.dy < 0 ? 0.1 : d.dy))
-    .attr('value', d => d.value)
-
-  // transition title text for the nodes
-  sankeySvg.selectAll('.nodeLabel')
-    .data(nodes)
-    .transition('newSankey')
-    .duration(newYearTransition)
-    .style('font-size', d => `${Math.floor(fontScale(d.value))}px`)
-    .attr('y', d => d.dy / 2)
-
-  // transition % text for the nodes
-  sankeySvg.selectAll('.nodePercent')
-    .data(nodes)
-    .transition('newSankey')
-    .duration(newYearTransition)
-    .text(d => `${format(d.value)}%`)
-    .attr('y', d => d.dy / 2)
-    .style('opacity', 1)
-    .filter(d => d.value < 1 || d.node == 20) //do spending seperately to correctly show surplus
-    .style('opacity', 0)
-
-  //remove old spending %
-  sankeySvg.selectAll('.spendingNodePercent').remove()
-
-  // % for spending in times of surplus using seperate data
-  node.append('text')
-    .attr('text-anchor', 'middle')
-    .attr('x', 30)
-    .attr('y', d => d.dy / 2)
-    .style('font-size', 18)
-    .attr('dy', '.35em')
-    .filter(d => d.node == 20)
-    .text(() => format(thisYearDeficit[0].spending) + '%')
-    .attr('class', 'spendingNodePercent')
-}
-
-function drawDeficit() {
-
-  //remove old, if any
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.deficit').remove()
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.deficitLabel').remove()
-
-  //highlight deficit
-  window.barHeight = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('rect[key=Spending]').attr('height')
-  window.barVal = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('rect[key=Spending]').attr('value')
-  window.deficitVal = thisYearDeficit[0].deficit
-
-  //get deficit bar size with ratio of spending value to bar height
-  window.deficitBarRatio = Math.floor((barHeight * deficitVal) / barVal)
-
-  window.deficitBar = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('rect[key=Spending]')
-    .select(function () {
-      return this.parentNode
-    })
-    .append('rect')
-    .attr('height', () => (deficitBarRatio < 0) ? -deficitBarRatio : deficitBarRatio)
-    .attr('width', sankey.nodeWidth())
-    .attr('y', d => (deficitBarRatio < 0) ? d.dy + deficitBarRatio : d.dy - deficitBarRatio)
-    .style('fill', () => (deficitBarRatio < 0) ? 'red' : 'blue')
-    .attr('class', 'deficit')
-    .style('opacity', 0)
-    .transition(newYearTransition)
-    .style('opacity', 0.8)
-
-  sankeySvg.append('text')
-    .attr('x', sankeyWidth / 2)
-    .attr('y', sankeyHeight * .92)
-    .attr('class', 'deficitLabel')
-    .text(() => (thisYearDeficit[0].deficit < 0) ? format(-thisYearDeficit[0].deficit) + '% Deficit' : format(thisYearDeficit[0].deficit) + '% Surplus')
-    .style('fill', () => (deficitBarRatio < 0) ? 'red' : 'blue')
-    .style('opacity', 0)
-    .transition(newYearTransition)
-    .style('opacity', 0.8)
-}
-
-function drawSlider() {
-  const slider = _assets_d3_simple_slider__WEBPACK_IMPORTED_MODULE_1__["sliderHorizontal"]()
-    .min(1968)
-    .max(2017)
-    .step(1)
-    .width(barsContainer.offsetWidth - 62)
-    .tickFormat(d3__WEBPACK_IMPORTED_MODULE_0__["format"]('.4'))
-    .default(2017)
-    .on('end', thisYear => { //use end instead of onchange, is when user releases mouse
-      window.thisYear = thisYear
-      // d3.csv('../../data/us-budget-sankey-main.csv').then(csv => {
-      //   d3.csv('../../data/us-budget-sankey-deficit.csv').then(deficit => {
-      d3__WEBPACK_IMPORTED_MODULE_0__["csv"]('data/us-budget-sankey-main.csv').then(csv => {
-        d3__WEBPACK_IMPORTED_MODULE_0__["csv"]('data/us-budget-sankey-deficit.csv').then(deficit => {
-
-          //update
-          d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.deficit').remove()
-          d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.deficitLabel').remove()
-          newData(csv, deficit, thisYear)
-          updateSankey()
-          setTimeout(() => drawDeficit(), newYearTransition)
-        })
-      })
-    })
-    .on('onchange', thisYear => { //use end instead of onchange, is when user releases mouse
-      window.thisYear = thisYear
-      updateBars(thisYear)
-      updateThisYearLine(thisYear)
-    })
-
-  const g = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('div#slider').append('svg')
-    .attr('width', barsContainer.offsetWidth)
-    .attr('height', 90)
-    .append('g')
-    .attr('transform', 'translate(30,30)')
-
-  g.call(slider)
-  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('#slider')
-    .style('font-size', 20)
-}
 
 function drawLines() {
   //seperate datasets filtered by type
@@ -30947,7 +30639,7 @@ function drawLines() {
     .attr('d', d => revLine(d.values))
     .attr('key', d => d.key.split(' ').join('_'))
     .style('stroke', 'green')
-    .on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_3__["highlight"])
+    .on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_1__["highlight"])
 
   // revenue lines
   const spendLines = lineSvg.selectAll('lineNode')
@@ -30961,7 +30653,7 @@ function drawLines() {
     .attr('d', d => spendLine(d.values))
     .attr('key', d => d.key.split(' ').join('_'))
     .style('stroke', 'red')
-    .on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_3__["highlight"])
+    .on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_1__["highlight"])
 
   //headers
   lineSvg.append('text')
@@ -31051,26 +30743,339 @@ function updateThisYearLine(thisYear) {
     .style('opacity', d => (thisYear == 1968 || thisYear == 2017) ? 0 : 1);
 
   (function (d) {
-    if (key != 0) {
+    if (window.key != 0 && window.lineLabelData) {
       d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.lineLabel').remove()
 
       d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.lineNode').filter(function (d, i) {
-          return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') == key
+          return d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key') == window.key
         })
         .append('g')
         .selectAll('text')
-        .data(lineLabelData)
+        .data(window.lineLabelData)
         .enter()
         .append('text')
         .filter(function (d, i) {
-          return i === 0 || i === (lineLabelData.length - 1) || d.year === thisYear
+          return i === 0 || i === (window.lineLabelData.length - 1) || d.year === thisYear
         })
         .attr('x', (d, i) => (d.type == 'Revenue') ? revLineX(d.year) : spendLineX(d.year))
         .attr('y', d => lineY(d.value) - 14)
-        .text((d, i) => formatNumber(d.value))
+        .text((d, i) => Object(_utils__WEBPACK_IMPORTED_MODULE_1__["formatNumber"])(d.value))
         .attr('class', 'lineLabel')
     }
   })()
+}
+
+/***/ }),
+
+/***/ "./src/js/sankey.js":
+/*!**************************!*\
+  !*** ./src/js/sankey.js ***!
+  \**************************/
+/*! exports provided: drawSankey, updateSankey, drawDeficit */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drawSankey", function() { return drawSankey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateSankey", function() { return updateSankey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drawDeficit", function() { return drawDeficit; });
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+/* harmony import */ var _assets_d3sankey__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/d3sankey */ "./src/js/assets/d3sankey.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ "./src/js/utils.js");
+
+
+
+
+function drawSankey() {
+
+  // set the dimensions and margins of the graph
+  window.sankeyMargin = {
+    top: 30,
+    right: 10,
+    bottom: 10,
+    left: 10
+  }
+
+  window.sankeyWidth = sankeyContainer.offsetWidth - sankeyMargin.left - sankeyMargin.right
+  window.sankeyHeight = 375 - sankeyMargin.top - sankeyMargin.bottom
+
+  // append the svg object to the body of the page
+  window.sankeySvg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('#sankeyContainer').append('svg')
+    .attr('width', sankeyWidth + sankeyMargin.left + sankeyMargin.right)
+    .attr('height', sankeyHeight + sankeyMargin.top + sankeyMargin.bottom)
+    .attr('class', 'sankeyCanvas')
+    .append('g')
+    .attr('transform',
+      `translate(${sankeyMargin.left},${sankeyMargin.top})`)
+
+  // Set the sankey diagram properties
+  window.sankey = _assets_d3sankey__WEBPACK_IMPORTED_MODULE_1__["d3sankey"]()
+    .nodeWidth(60)
+    .nodePadding(20)
+    .size([sankeyWidth, sankeyHeight])
+
+  const path = sankey.link()
+
+  sankey.nodes(nodes)
+    .links(links)
+    .layout(1000)
+
+  _utils__WEBPACK_IMPORTED_MODULE_2__["fontScale"].domain(d3__WEBPACK_IMPORTED_MODULE_0__["extent"](nodes, d => d.value))
+
+  // add in the links
+  window.link = sankeySvg.append('g').selectAll('.link')
+    .data(links, d => d.id)
+    .enter().append('path')
+    .attr('class', 'link')
+    .attr('d', path)
+    .style('stroke', d => {
+      if (d.type == 'Revenue') {
+        return 'green'
+      } else if (d.type == 'Spending') {
+        return 'red'
+      } else {
+        return 'grey'
+      }
+    })
+    .style('stroke-width', d => Math.max(1, d.dy))
+    .attr('key', d => (d.type == 'Revenue') ? d.source.name.split(' ').join('_') : d.target.name.split(' ').join('_'))
+    .on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_2__["highlight"])
+
+  // add in the nodes
+  window.node = sankeySvg
+    .append('g')
+    .selectAll('.node')
+    .data(nodes)
+    .enter()
+    .append('g')
+    .attr('class', 'node')
+    .attr('transform', d => `translate(${d.x},${d.y})`)
+
+  // add the rectangles for the nodes
+  node.append('rect')
+    .attr('height', d => d.dy < 0 ? .1 : d.dy)
+    .attr('width', sankey.nodeWidth())
+    .attr('key', d => d.name.split(' ').join('_'))
+    .attr('value', d => d.value)
+    .attr('class', 'nodeRect')
+    .on('mouseover', _utils__WEBPACK_IMPORTED_MODULE_2__["highlight"])
+
+  // title for the nodes
+  node.append('text')
+    .attr('x', -6)
+    .attr('y', d => d.dy / 2)
+    .attr('dy', '.35em')
+    .attr('text-anchor', 'end')
+    .attr('transform', null)
+    .style('font-size', d => Math.floor(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["fontScale"])(d.value)) + 'px')
+    .text(d => d.name)
+    .attr('class', 'nodeLabel')
+    .filter(d => d.x < sankeyWidth / 2)
+    .attr('x', 6 + sankey.nodeWidth())
+    .attr('text-anchor', 'start')
+
+
+  // % for the nodes
+  node.append('text')
+    .attr('x', 30)
+    .attr('y', d => d.dy / 2)
+    .attr('dy', '.35em')
+    .attr('class', 'nodePercent')
+    .text(d => `${Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(d.value)}%`)
+    .filter(d => d.value <= 1 || d.node == 20) //do spending seperately to correctly show surplus
+    .style('opacity', 0)
+
+  //PERCENT OF GDP
+  sankeySvg.append('text')
+    .attr('x', 0)
+    .attr('y', -5)
+    .attr('dy', '0em')
+    .text('Percent of GDP')
+    .attr('class', 'percent')
+
+  // % for spending in times of surplus using seperate data
+  node.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('x', 30)
+    .attr('y', d => d.dy / 2)
+    .style('font-size', 18)
+    .attr('dy', '.35em')
+    .filter(d => d.node == 20)
+    .text(() => Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(thisYearDeficit[0].spending) + '%')
+    .attr('class', 'spendingNodePercent')
+}
+
+function updateSankey() {
+  const path = sankey.link()
+
+  sankey.nodes(nodes)
+    .links(links)
+    .layout(1000)
+
+  sankey.relayout()
+  _utils__WEBPACK_IMPORTED_MODULE_2__["fontScale"].domain(d3__WEBPACK_IMPORTED_MODULE_0__["extent"](nodes, d => d.value))
+
+  // transition links
+  sankeySvg.selectAll('.link')
+    .data(links)
+    .transition('newSankey')
+    .duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
+    .attr('d', path)
+    .style('stroke-width', d => Math.max(1, d.dy))
+
+  // transition nodes
+  sankeySvg.selectAll('.node')
+    .data(nodes)
+    .transition('newSankey')
+    .duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
+    .attr('transform', d => `translate(${d.x},${d.y})`)
+
+  // transition rectangles for the nodes
+  sankeySvg.selectAll('.node rect')
+    .data(nodes)
+    .transition('newSankey')
+    .duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
+    .attr('height', d => (d.dy < 0 ? 0.1 : d.dy))
+    .attr('value', d => d.value)
+
+  // transition title text for the nodes
+  sankeySvg.selectAll('.nodeLabel')
+    .data(nodes)
+    .transition('newSankey')
+    .duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
+    .style('font-size', d => `${Math.floor(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["fontScale"])(d.value))}px`)
+    .attr('y', d => d.dy / 2)
+
+  // transition % text for the nodes
+  sankeySvg.selectAll('.nodePercent')
+    .data(nodes)
+    .transition('newSankey')
+    .duration(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
+    .text(d => `${Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(d.value)}%`)
+    .attr('y', d => d.dy / 2)
+    .style('opacity', 1)
+    .filter(d => d.value < 1 || d.node == 20) //do spending seperately to correctly show surplus
+    .style('opacity', 0)
+
+  //remove old spending %
+  sankeySvg.selectAll('.spendingNodePercent').remove()
+
+  // % for spending in times of surplus using seperate data
+  node.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('x', 30)
+    .attr('y', d => d.dy / 2)
+    .style('font-size', 18)
+    .attr('dy', '.35em')
+    .filter(d => d.node == 20)
+    .text(() => Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(thisYearDeficit[0].spending) + '%')
+    .attr('class', 'spendingNodePercent')
+}
+
+function drawDeficit() {
+
+  //remove old, if any
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.deficit').remove()
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('.deficitLabel').remove()
+
+  //highlight deficit
+  window.barHeight = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('rect[key=Spending]').attr('height')
+  window.barVal = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('rect[key=Spending]').attr('value')
+  window.deficitVal = thisYearDeficit[0].deficit
+
+  //get deficit bar size with ratio of spending value to bar height
+  window.deficitBarRatio = Math.floor((barHeight * deficitVal) / barVal)
+
+  window.deficitBar = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('rect[key=Spending]')
+    .select(function () {
+      return this.parentNode
+    })
+    .append('rect')
+    .attr('height', () => (deficitBarRatio < 0) ? -deficitBarRatio : deficitBarRatio)
+    .attr('width', sankey.nodeWidth())
+    .attr('y', d => (deficitBarRatio < 0) ? d.dy + deficitBarRatio : d.dy - deficitBarRatio)
+    .style('fill', () => (deficitBarRatio < 0) ? 'red' : 'blue')
+    .attr('class', 'deficit')
+    .style('opacity', 0)
+    .transition(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
+    .style('opacity', 0.8)
+
+  sankeySvg.append('text')
+    .attr('x', sankeyWidth / 2)
+    .attr('y', sankeyHeight * .92)
+    .attr('class', 'deficitLabel')
+    .text(() => (thisYearDeficit[0].deficit < 0) ? Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(-thisYearDeficit[0].deficit) + '% Deficit' : Object(_utils__WEBPACK_IMPORTED_MODULE_2__["format"])(thisYearDeficit[0].deficit) + '% Surplus')
+    .style('fill', () => (deficitBarRatio < 0) ? 'red' : 'blue')
+    .style('opacity', 0)
+    .transition(_utils__WEBPACK_IMPORTED_MODULE_2__["newYearTransition"])
+    .style('opacity', 0.8)
+}
+
+/***/ }),
+
+/***/ "./src/js/slider.js":
+/*!**************************!*\
+  !*** ./src/js/slider.js ***!
+  \**************************/
+/*! exports provided: drawSlider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drawSlider", function() { return drawSlider; });
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+/* harmony import */ var _assets_d3_simple_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/d3-simple-slider */ "./src/js/assets/d3-simple-slider.js");
+/* harmony import */ var _assets_d3_simple_slider__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_d3_simple_slider__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _bars__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bars */ "./src/js/bars.js");
+/* harmony import */ var _lines__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lines */ "./src/js/lines.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils */ "./src/js/utils.js");
+/* harmony import */ var _sankey__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sankey */ "./src/js/sankey.js");
+
+
+
+
+
+
+
+function drawSlider() {
+  const slider = _assets_d3_simple_slider__WEBPACK_IMPORTED_MODULE_1__["sliderHorizontal"]()
+    .min(1968)
+    .max(2017)
+    .step(1)
+    .width(barsContainer.offsetWidth - 62)
+    .tickFormat(d3__WEBPACK_IMPORTED_MODULE_0__["format"]('.4'))
+    .default(2017)
+    .on('end', thisYear => { //use end instead of onchange, is when user releases mouse
+      window.thisYear = thisYear
+      // d3.csv('../../data/us-budget-sankey-main.csv').then(csv => {
+      //   d3.csv('../../data/us-budget-sankey-deficit.csv').then(deficit => {
+      d3__WEBPACK_IMPORTED_MODULE_0__["csv"]('data/us-budget-sankey-main.csv').then(csv => {
+        d3__WEBPACK_IMPORTED_MODULE_0__["csv"]('data/us-budget-sankey-deficit.csv').then(deficit => {
+
+          //update
+          d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.deficit').remove()
+          d3__WEBPACK_IMPORTED_MODULE_0__["select"]('.deficitLabel').remove()
+          Object(_utils__WEBPACK_IMPORTED_MODULE_4__["newData"])(csv, deficit, thisYear)
+          Object(_sankey__WEBPACK_IMPORTED_MODULE_5__["updateSankey"])()
+          setTimeout(() => Object(_sankey__WEBPACK_IMPORTED_MODULE_5__["drawDeficit"])(), _utils__WEBPACK_IMPORTED_MODULE_4__["newYearTransition"])
+        })
+      })
+    })
+    .on('onchange', thisYear => { //use end instead of onchange, is when user releases mouse
+      window.thisYear = thisYear
+      Object(_bars__WEBPACK_IMPORTED_MODULE_2__["updateBars"])(thisYear)
+      Object(_lines__WEBPACK_IMPORTED_MODULE_3__["updateThisYearLine"])(thisYear)
+    })
+
+  const g = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('div#slider').append('svg')
+    .attr('width', barsContainer.offsetWidth)
+    .attr('height', 90)
+    .append('g')
+    .attr('transform', 'translate(30,30)')
+
+  g.call(slider)
+  d3__WEBPACK_IMPORTED_MODULE_0__["selectAll"]('#slider')
+    .style('font-size', 20)
 }
 
 /***/ }),
@@ -31079,11 +31084,17 @@ function updateThisYearLine(thisYear) {
 /*!*************************!*\
   !*** ./src/js/utils.js ***!
   \*************************/
-/*! exports provided: highlight, onlyUnique, stackMin, stackMax */
+/*! exports provided: formatNumber, format, fontScale, newYearTransition, highlightTransition, newData, highlight, onlyUnique, stackMin, stackMax */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatNumber", function() { return formatNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "format", function() { return format; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fontScale", function() { return fontScale; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newYearTransition", function() { return newYearTransition; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "highlightTransition", function() { return highlightTransition; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newData", function() { return newData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "highlight", function() { return highlight; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onlyUnique", function() { return onlyUnique; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stackMin", function() { return stackMin; });
@@ -31093,7 +31104,67 @@ __webpack_require__.r(__webpack_exports__);
 
 // format variables
 const formatNumber = d3__WEBPACK_IMPORTED_MODULE_0__["format"]('.1f') // zero decimal places
+const format = d => formatNumber(d)
+
+const fontScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"]().range([14, 22])
+
+//transition times
+const newYearTransition = 800
 const highlightTransition = 50
+
+window.thisYear = 2017
+window.key = 0 //initialize for highlighting purposes; gets redefines as 'income', 'payroll', etc on mouseover
+
+function newData(csv, deficit, thisYear) {
+  window.thisYearCsv = csv.filter(d => d['year'] == thisYear)
+  thisYearCsv.forEach(d => d.dollars = +d.dollars)
+  window.thisYearDeficit = deficit.filter(d => d['year'] == thisYear)
+
+  //create an array to push all sources and targets, before making them unique
+  //because starting nodes are not targets and end nodes are not sources
+  window.arr = []
+  thisYearCsv.forEach(d => {
+    arr.push(d.source)
+    arr.push(d.target)
+  })
+
+  // create nodes array
+
+  window.nodes = arr.filter(onlyUnique).map((thisYearCsv, i) => {
+    return {
+      node: i,
+      name: thisYearCsv
+    }
+  })
+
+  // create links array
+  window.links = thisYearCsv.map(thisYearCsv_row => {
+    return {
+      source: getNode('source'),
+      target: getNode('target'),
+      value: +thisYearCsv_row.value,
+      type: thisYearCsv_row.type //to allow for proper keying
+    }
+
+    function getNode(type) {
+      return nodes.filter(node_object => node_object.name == thisYearCsv_row[type])[0].node
+    }
+  })
+
+  window.lineData = csv
+  lineData.forEach(d => {
+    d.year = +d.year
+    d.value = +d.value
+  })
+
+  return {
+    lineData,
+    links,
+    nodes,
+    thisYearCsv,
+    thisYearDeficit
+  }
+}
 
 function highlight() {
   window.key = d3__WEBPACK_IMPORTED_MODULE_0__["select"](this).attr('key')

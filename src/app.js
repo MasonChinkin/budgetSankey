@@ -1,13 +1,21 @@
 import './app.scss';
 import * as d3 from 'd3'
 import {
-  drawLines,
-  drawSlider,
-  drawDeficit,
-  drawSankey,
-  drawBars,
   newData
-} from './js/main';
+} from './js/utils';
+import {
+  drawBars
+} from './js/bars';
+import {
+  drawSlider
+} from './js/slider';
+import {
+  drawLines
+} from './js/lines';
+import {
+  drawSankey,
+  drawDeficit
+} from './js/sankey';
 
 document.addEventListener('DOMContentLoaded', () => {
   drawDashboard()
