@@ -26,11 +26,11 @@ const slider = d3Slider.sliderHorizontal()
     .width(barsContainer.offsetWidth - 62)
     .tickFormat(d3.format('.4'))
     .default(2017)
-    .on('onchange', thisYear => { //use end instead of onchange, is when user releases mouse
+    .on('onchange', thisYear => { // when user drags mouse
       updateBars(thisYear)
       updateThisYearLine(thisYear)
     })
-    .on('end', thisYear => { //use end instead of onchange, is when user releases mouse
+    .on('end', thisYear => { // when user releases mouse
       d3.csv('data/us-budget-sankey-main.csv').then(csv => {
         d3.csv('data/us-budget-sankey-deficit.csv').then(deficit => {
 
