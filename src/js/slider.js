@@ -23,6 +23,11 @@ export function drawSlider() {
     .width(barsContainer.offsetWidth - 62)
     .tickFormat(d3.format('.4'))
     .default(2017)
+    .on('onchange', thisYear => { //use end instead of onchange, is when user releases mouse
+      window.thisYear = thisYear
+      updateBars(thisYear)
+      updateThisYearLine(thisYear)
+    })
     .on('end', thisYear => { //use end instead of onchange, is when user releases mouse
       window.thisYear = thisYear
       d3.csv('data/us-budget-sankey-main.csv').then(csv => {
@@ -36,11 +41,6 @@ export function drawSlider() {
           setTimeout(() => drawDeficit(), newYearTransition)
         })
       })
-    })
-    .on('onchange', thisYear => { //use end instead of onchange, is when user releases mouse
-      window.thisYear = thisYear
-      updateBars(thisYear)
-      updateThisYearLine(thisYear)
     })
 
   const g = d3.select('div#slider').append('svg')
