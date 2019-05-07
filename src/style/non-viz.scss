@@ -5,6 +5,7 @@ body {
 }
 
 header {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -14,6 +15,12 @@ header {
 
   &>h1 {
     font-size: 28px;
+  }
+
+  &>a {
+    position: absolute;
+    left: 10px;
+    padding: 10px;
   }
 }
 
@@ -28,6 +35,7 @@ header {
   height: 5vh;
 
   &>* {
+    padding: 5px;
     margin-right: 60px;
   }
 
@@ -77,6 +85,8 @@ main {
       margin-bottom: 0;
     }
   }
+}
 
-
+a:hover {
+  outline: lightblue solid 2px;
 }
