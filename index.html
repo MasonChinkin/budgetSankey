@@ -1,93 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- icons -->
 
-  <!-- icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
-  <link rel='stylesheet'
-    href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
-    integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ'
-    crossorigin='anonymous'>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- icons -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-138361240-4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async
-    src="https://www.googletagmanager.com/gtag/js?id=UA-138361240-4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+      gtag("config", "UA-138361240-4");
+    </script>
 
-    gtag('config', 'UA-138361240-4');
-  </script>
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      rel="stylesheet"
+    />
+    <!-- fonts -->
 
-  <!-- fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-    rel="stylesheet">
-  <!-- fonts -->
+    <script src="./dist/bundle.js"></script>
+    <title>Federal Budget Sankey</title>
+  </head>
 
-  <script src="./dist/bundle.js"></script>
-  <title>Federal Budget Sankey</title>
-</head>
+  <body>
+    <header>
+      <h1>Federal Budget Sankey</h1>
+      <a href="https://masonchinkin.com/d3">
+        <i class="fas fa-long-arrow-alt-left"></i> Back</a
+      >
+    </header>
 
-<body>
-
-  <header>
-    <h1>Federal Budget Sankey</h1>
-    <a href="https://masonchinkin.com/d3-projects">
-      <i class="fas fa-long-arrow-alt-left"></i> Back</a>
-  </header>
-
-  <main>
-
-    <!-- <section class="instructions">
+    <main>
+      <!-- <section class="instructions">
       <h1>Instructions</h1>
       <ul>
         <li>placeholder</li>
       </ul>
     </section> -->
 
-    <section id="visualization-container">
-      <div id="barsContainer">
-        <div id="slider"></div>
-      </div>
-      <div id="sankeyContainer">
-      </div>
-      <div id="linesContainer">
-      </div>
-      <!-- <div id="notes">
+      <section id="visualization-container">
+        <div id="barsContainer">
+          <div id="slider"></div>
+        </div>
+        <div id="sankeyContainer"></div>
+        <div id="linesContainer"></div>
+        <!-- <div id="notes">
         <p>
           <font size="2">* Originally under "Mandatory" as a negative value
             <br>** Technically called "Programmatic"
             <br>Source: OMB</font>
         </p>
       </div> -->
+      </section>
+    </main>
 
-    </section>
-  </main>
-
-  <footer>
-    <div class="links">
-      <a href="https://www.linkedin.com/in/mason-chinkin/" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/MasonChinkin" target="_blank">
-        <i class="fab fa-github"></i> Github</a>
-      <a href="https://masonchinkin.com/" target="_blank">Personal
-        Website</a>
-    </div>
-    <a href="https://icons8.com/icon/1724/scatter-plot">Scatter Plot icon by
-      Icons8</a>
-  </footer>
-</body>
-
+    <footer>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/mason-chinkin/" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn</a
+        >
+        <a href="https://github.com/MasonChinkin" target="_blank">
+          <i class="fab fa-github"></i> Github</a
+        >
+        <a href="https://masonchinkin.com/" target="_blank">Personal Website</a>
+      </div>
+      <a href="https://icons8.com/icon/1724/scatter-plot"
+        >Scatter Plot icon by Icons8</a
+      >
+    </footer>
+  </body>
 </html>

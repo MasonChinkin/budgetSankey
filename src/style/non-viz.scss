@@ -1,6 +1,5 @@
 body {
-  font-family: 'Roboto',
-    sans-serif;
+  font-family: "Roboto", sans-serif;
   background: rgb(210, 220, 230);
 }
 
@@ -13,11 +12,11 @@ header {
   background: white;
   padding: 10px 0;
 
-  &>h1 {
+  & > h1 {
     font-size: 28px;
   }
 
-  &>a {
+  & > a {
     position: absolute;
     left: 10px;
     padding: 10px;
@@ -34,7 +33,7 @@ header {
   bottom: 0;
   height: 5vh;
 
-  &>* {
+  & > * {
     padding: 5px;
     margin-right: 60px;
   }
@@ -44,7 +43,7 @@ header {
   }
 }
 
-footer>a {
+footer > a {
   position: fixed;
   bottom: 0;
   font-size: 1px;

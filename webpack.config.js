@@ -1,18 +1,19 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'app.js'),
+  entry: path.resolve(__dirname, "src", "app.js"),
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
   },
   resolve: {
-    extensions: ['.js', '*']
+    extensions: [".js", "*"],
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.scss/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: [/\.js$/],
@@ -20,11 +21,11 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"]
-          }
-        }
-      }
-    ]
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
   },
-  devtool: 'source-map'
+  devtool: "source-map",
 };
